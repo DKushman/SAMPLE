@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { PillArrowButton } from "@/components/PillArrowButton";
 import { gsap, ScrollTrigger } from "@/lib/gsap-client";
 import imgErbe from "../pexels-viewofbeth-166056035-11016003.jpg";
@@ -54,7 +54,6 @@ const STACK_CARDS: StackCard[] = [
   },
 ];
 
-/** Vertikaler Versatz pro Stufe: nächste Karte beginnt unter der H3-Zeile der darüberliegenden Karte (`--stack-under-h3`). */
 /** z-index rises with stack order so each new card lays in front of the previous. */
 const CARD_Z = [1, 2, 3, 4] as const;
 
@@ -62,18 +61,82 @@ type StackedCardsShowcaseProps = {
   reducedMotion: boolean;
 };
 
-export function StackedCardsShowcase({
-  reducedMotion,
-}: StackedCardsShowcaseProps) {
+function subscribeMdUp(cb: () => void) {
+  const mq = window.matchMedia("(min-width: 768px)");
+  mq.addEventListener("change", cb);
+  return () => mq.removeEventListener("change", cb);
+}
+
+function CardRowLayout({
+  card,
+  variant,
+}: {
+  card: StackCard;
+  variant: "static" | "animated";
+}) {
+  const gap =
+    variant === "static"
+      ? "gap-[clamp(0.85rem,2vw,1.15rem)]"
+      : "gap-[clamp(0.65rem,1.8vw,1.1rem)]";
+  const titleClass =
+    variant === "static"
+      ? "text-[clamp(1.22rem,3.45vw,2.25rem)] leading-[1.02]"
+      : "text-[clamp(1.28rem,3.85vw,2.5rem)] leading-[0.98]";
+  const imgBoxStatic =
+    card.id === "human-clicks"
+      ? "aspect-[4/3] max-h-[min(52svh,20rem)] lg:aspect-auto lg:max-h-none lg:h-[min(52vw,20rem)] lg:w-[min(52vw,20rem)] xl:h-[min(46vw,30rem)] xl:w-[min(46vw,30rem)] 2xl:h-[min(42vw,34rem)] 2xl:w-[min(42vw,34rem)]"
+      : "aspect-[4/3] max-h-[min(52svh,20rem)] md:aspect-auto md:max-h-none md:h-[min(52vw,20rem)] md:w-[min(52vw,20rem)] lg:h-[min(46vw,30rem)] lg:w-[min(46vw,30rem)] xl:h-[min(42vw,34rem)] xl:w-[min(42vw,34rem)]";
+  const imgBoxAnimated =
+    card.id === "human-clicks"
+      ? "aspect-[4/3] max-h-[min(50svh,19rem)] lg:aspect-auto lg:max-h-none lg:h-[min(56vw,22rem)] lg:w-[min(56vw,22rem)] xl:h-[min(48vw,32rem)] xl:w-[min(48vw,32rem)] 2xl:h-[min(44vw,38rem)] 2xl:w-[min(44vw,38rem)]"
+      : "aspect-[4/3] max-h-[min(50svh,19rem)] md:aspect-auto md:max-h-none md:h-[min(56vw,22rem)] md:w-[min(56vw,22rem)] lg:h-[min(48vw,32rem)] lg:w-[min(48vw,32rem)] xl:h-[min(44vw,38rem)] xl:w-[min(44vw,38rem)]";
+
+  const row =
+    card.id === "human-clicks"
+      ? `flex flex-col justify-start ${gap} lg:flex-row lg:items-start lg:justify-between lg:gap-[clamp(1.1rem,2.75vw,2.25rem)]`
+      : `flex flex-col justify-start ${gap} md:flex-row md:items-start md:justify-between md:gap-[clamp(1.1rem,2.75vw,2.25rem)]`;
+
+  return (
+    <div className={variant === "animated" ? `flex min-h-0 w-full flex-1 ${row}` : row}>
+      <h3
+        className={`shrink-0 font-sans ${titleClass} font-bold uppercase italic tracking-tight ${card.textClass}`}
+      >
+        {card.title}
+      </h3>
+      <div
+        className={`relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl ${
+          variant === "static" ? imgBoxStatic : imgBoxAnimated
+        }`}
+        role="img"
+        aria-label={card.graphicAlt}
+      >
+        <img
+          src={card.imageSrc}
+          alt=""
+          className="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  );
+}
+
+export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProps) {
   const rootRef = useRef<HTMLElement>(null);
-  /** Tall scroll track — natural Lenis scroll, no pin (avoids abrupt „switch“). */
   const scrollRangeRef = useRef<HTMLDivElement>(null);
   const stackRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
+  const isMdUp = useSyncExternalStore(
+    subscribeMdUp,
+    () => window.matchMedia("(min-width: 768px)").matches,
+    () => true,
+  );
+
   useGSAP(
     () => {
-      if (reducedMotion) return;
+      if (reducedMotion || !isMdUp) return;
       const range = scrollRangeRef.current;
       const stack = stackRef.current;
       if (!range || !stack) return;
@@ -88,17 +151,11 @@ export function StackedCardsShowcase({
       const setUnderH3Offset = () => {
         const heading = salmonEl.querySelector("h3");
         if (!heading) return;
-        const isMobile = window.matchMedia("(max-width: 767px)").matches;
         const headingHeight = heading.getBoundingClientRect().height;
         const paddingTop = Number.parseFloat(getComputedStyle(salmonEl).paddingTop) || 0;
-        // Keep at least the h3 stripe visible on the previous card, but cap it to avoid clipping.
         const rawStep = headingHeight + paddingTop + 8;
         const stepPx = Math.min(Math.max(rawStep, 56), 88);
         stack.style.setProperty("--stack-under-h3", `${stepPx}px`);
-        if (isMobile) {
-          stack.style.setProperty("--stack-card-height", "fit-content");
-          return;
-        }
         const maxOffset = stepPx * (STACK_CARDS.length - 1);
         const safeBottomPad = 16;
         const availablePx = stack.clientHeight - maxOffset - safeBottomPad;
@@ -109,7 +166,6 @@ export function StackedCardsShowcase({
       ScrollTrigger.addEventListener("refreshInit", setUnderH3Offset);
 
       gsap.set(stack, { force3D: true, willChange: "transform" });
-      /* Bottom card first; each following card sits below the viewport, then slides up on top. */
       gsap.set(blackEl, { yPercent: 0, force3D: true, willChange: "transform" });
       gsap.set([tealEl, creamEl, salmonEl], {
         yPercent: 108,
@@ -171,11 +227,12 @@ export function StackedCardsShowcase({
         gsap.set([stack, ...cardEls], { clearProps: "willChange" });
       };
     },
-    { scope: rootRef, dependencies: [reducedMotion] },
+    { scope: rootRef, dependencies: [reducedMotion, isMdUp] },
   );
 
   const cardsDom = [...STACK_CARDS].reverse();
 
+  /* Nur prefers-reduced-motion: komplette statische Section (gleiches Markup wie Mobil). */
   if (reducedMotion) {
     return (
       <section
@@ -202,35 +259,7 @@ export function StackedCardsShowcase({
               aria-label={`${card.title} — zur Übersicht`}
               className={`block overflow-hidden rounded-[clamp(0.95rem,1.8vw,1.45rem)] px-[clamp(0.9rem,2.5vw,1.5rem)] py-[clamp(1rem,2.5vw,1.45rem)] shadow-[0_0.5rem_1.75rem_rgba(0,0,0,0.08)] no-underline outline-offset-2 transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${card.bgClass}`}
             >
-              <div
-                className={
-                  card.id === "human-clicks"
-                    ? "flex flex-col justify-start gap-[clamp(0.85rem,2vw,1.15rem)] lg:flex-row lg:items-start lg:justify-between lg:gap-[clamp(1.1rem,2.75vw,2.25rem)]"
-                    : "flex flex-col justify-start gap-[clamp(0.85rem,2vw,1.15rem)] md:flex-row md:items-start md:justify-between md:gap-[clamp(1.1rem,2.75vw,2.25rem)]"
-                }
-              >
-                <h3
-                  className={`shrink-0 font-sans text-[clamp(1.22rem,3.45vw,2.25rem)] font-bold uppercase italic leading-[1.02] tracking-tight ${card.textClass}`}
-                >
-                  {card.title}
-                </h3>
-                <div
-                  className={
-                    card.id === "human-clicks"
-                      ? "relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl aspect-[4/3] max-h-[min(52svh,20rem)] lg:aspect-auto lg:max-h-none lg:h-[min(52vw,20rem)] lg:w-[min(52vw,20rem)] xl:h-[min(46vw,30rem)] xl:w-[min(46vw,30rem)] 2xl:h-[min(42vw,34rem)] 2xl:w-[min(42vw,34rem)]"
-                      : "relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl aspect-[4/3] max-h-[min(52svh,20rem)] md:aspect-auto md:max-h-none md:h-[min(52vw,20rem)] md:w-[min(52vw,20rem)] lg:h-[min(46vw,30rem)] lg:w-[min(46vw,30rem)] xl:h-[min(42vw,34rem)] xl:w-[min(42vw,34rem)]"
-                  }
-                  role="img"
-                  aria-label={card.graphicAlt}
-                >
-                  <img
-                    src={card.imageSrc}
-                    alt=""
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <CardRowLayout card={card} variant="static" />
             </Link>
           ))}
         </div>
@@ -242,79 +271,82 @@ export function StackedCardsShowcase({
   }
 
   return (
-    <section
-      ref={rootRef}
-      id="stack-showcase-section"
-      aria-label="Unsere Mandanteninformationen für Sie"
-      className="relative z-20"
-    >
-      <div
-        ref={scrollRangeRef}
-        id="stack-showcase-scroll-range"
-        className="relative h-[520vh]"
-      >
-        <div
-          id="stack-showcase-sticky-stage"
-          className="sticky top-0 h-[118svh] min-h-[118svh] overflow-hidden isolate md:h-[112svh] md:min-h-[112svh]"
+    <section ref={rootRef} id="stack-showcase-section" className="relative z-20">
+      {/* Mobil: natives Scrollen, volle Karten — kein 520vh/GSAP (keine „Striche“, weniger CPU). */}
+      <div className="px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(3rem,8vw,6rem)] pt-[clamp(3rem,8vw,6rem)] md:hidden">
+        <h2
+          id="stack-showcase-heading"
+          className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] px-[clamp(1rem,4vw,2.5rem)] text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
         >
-        <div
-          ref={stackRef}
-          id="stack-showcase-stack"
-          className="absolute bottom-0 left-0 right-0 top-[clamp(14vh,20vh,26vh)] flex justify-center px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(0.75rem,3vh,1.5rem)] [--stack-under-h3:clamp(4rem,7vw,5.75rem)] [--stack-card-height:78vh]"
-        >
-          {cardsDom.map((card, stackIndex) => (
+          Unsere Mandanteninformationen für Sie
+        </h2>
+        <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] px-[clamp(1rem,4vw,2.5rem)] text-center text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
+          Ausgewählte Informationen zu häufigen notariellen und rechtlichen Themen.
+        </p>
+        <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
+          {STACK_CARDS.map((card) => (
             <Link
-              key={card.id}
+              key={`mobile-${card.id}`}
               href="/"
-              ref={(node) => {
-                cardRefs.current[stackIndex] = node;
-              }}
-              id={`stack-showcase-card-${card.id}`}
+              id={`stack-showcase-mobile-${card.id}`}
               aria-label={`${card.title} — zur Übersicht`}
-              className={`absolute flex min-h-0 flex-col overflow-hidden rounded-[clamp(1.25rem,3vw,2.35rem)] px-[clamp(0.95rem,2.75vw,1.85rem)] py-[clamp(1rem,2.75vw,1.65rem)] shadow-[0_0.85rem_2.25rem_rgba(0,0,0,0.12)] no-underline outline-offset-2 transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${card.bgClass}`}
-              style={{
-                height: "var(--stack-card-height)",
-                bottom: `calc(${STACK_CARDS.length - 1 - stackIndex} * var(--stack-under-h3))`,
-                left: "clamp(1rem, 4vw, 2.5rem)",
-                right: "clamp(1rem, 4vw, 2.5rem)",
-                zIndex: CARD_Z[stackIndex],
-              }}
+              className={`block overflow-hidden rounded-[clamp(0.95rem,1.8vw,1.45rem)] px-[clamp(0.9rem,2.5vw,1.5rem)] py-[clamp(1rem,2.5vw,1.45rem)] shadow-[0_0.5rem_1.75rem_rgba(0,0,0,0.08)] no-underline outline-offset-2 transition-opacity active:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${card.bgClass}`}
             >
-              <div
-                className={
-                  card.id === "human-clicks"
-                    ? "flex min-h-0 w-full flex-1 flex-col justify-start gap-[clamp(0.65rem,1.8vw,1.1rem)] lg:flex-row lg:items-start lg:justify-between lg:gap-[clamp(1.1rem,2.75vw,2.25rem)]"
-                    : "flex min-h-0 w-full flex-1 flex-col justify-start gap-[clamp(0.65rem,1.8vw,1.1rem)] md:flex-row md:items-start md:justify-between md:gap-[clamp(1.1rem,2.75vw,2.25rem)]"
-                }
-              >
-                <h3
-                  className={`shrink-0 font-sans text-[clamp(1.28rem,3.85vw,2.5rem)] font-bold uppercase italic leading-[0.98] tracking-tight ${card.textClass}`}
-                >
-                  {card.title}
-                </h3>
-                <div
-                  className={
-                    card.id === "human-clicks"
-                      ? "relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl aspect-[4/3] max-h-[min(50svh,19rem)] lg:aspect-auto lg:max-h-none lg:h-[min(56vw,22rem)] lg:w-[min(56vw,22rem)] xl:h-[min(48vw,32rem)] xl:w-[min(48vw,32rem)] 2xl:h-[min(44vw,38rem)] 2xl:w-[min(44vw,38rem)]"
-                      : "relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl aspect-[4/3] max-h-[min(50svh,19rem)] md:aspect-auto md:max-h-none md:h-[min(56vw,22rem)] md:w-[min(56vw,22rem)] lg:h-[min(48vw,32rem)] lg:w-[min(48vw,32rem)] xl:h-[min(44vw,38rem)] xl:w-[min(44vw,38rem)]"
-                  }
-                  role="img"
-                  aria-label={card.graphicAlt}
-                >
-                  <img
-                    src={card.imageSrc}
-                    alt=""
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <CardRowLayout card={card} variant="static" />
             </Link>
           ))}
         </div>
-        <div className="absolute bottom-[clamp(1rem,3vh,2rem)] left-0 right-0 z-30 flex justify-center px-[clamp(1rem,4vw,2.5rem)]">
+        <div className="mx-auto mt-[clamp(1.2rem,3vw,2rem)] flex w-full max-w-[42rem] justify-center px-[clamp(1rem,4vw,2.5rem)]">
           <PillArrowButton href="/" label="Alle Mandanteninformationen ansehen" />
         </div>
+      </div>
+
+      {/* Desktop: Scroll-Story + GSAP */}
+      <div className="hidden md:block">
+        <h2 className="sr-only">Unsere Mandanteninformationen für Sie</h2>
+        <p className="sr-only">
+          Ausgewählte Informationen zu häufigen notariellen und rechtlichen Themen.
+        </p>
+        <div
+          ref={scrollRangeRef}
+          id="stack-showcase-scroll-range"
+          className="relative h-[520vh]"
+        >
+          <div
+            id="stack-showcase-sticky-stage"
+            className="sticky top-0 h-[112svh] min-h-[112svh] overflow-hidden isolate"
+          >
+            <div
+              ref={stackRef}
+              id="stack-showcase-stack"
+              className="absolute bottom-0 left-0 right-0 top-[clamp(14vh,20vh,26vh)] flex justify-center px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(0.75rem,3vh,1.5rem)] [--stack-under-h3:clamp(4rem,7vw,5.75rem)] [--stack-card-height:78vh]"
+            >
+              {cardsDom.map((card, stackIndex) => (
+                <Link
+                  key={card.id}
+                  href="/"
+                  ref={(node) => {
+                    cardRefs.current[stackIndex] = node;
+                  }}
+                  id={`stack-showcase-card-${card.id}`}
+                  aria-label={`${card.title} — zur Übersicht`}
+                  className={`absolute flex min-h-0 flex-col overflow-hidden rounded-[clamp(1.25rem,3vw,2.35rem)] px-[clamp(0.95rem,2.75vw,1.85rem)] py-[clamp(1rem,2.75vw,1.65rem)] shadow-[0_0.85rem_2.25rem_rgba(0,0,0,0.12)] no-underline outline-offset-2 transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${card.bgClass}`}
+                  style={{
+                    height: "var(--stack-card-height)",
+                    bottom: `calc(${STACK_CARDS.length - 1 - stackIndex} * var(--stack-under-h3))`,
+                    left: "clamp(1rem, 4vw, 2.5rem)",
+                    right: "clamp(1rem, 4vw, 2.5rem)",
+                    zIndex: CARD_Z[stackIndex],
+                  }}
+                >
+                  <CardRowLayout card={card} variant="animated" />
+                </Link>
+              ))}
+            </div>
+            <div className="absolute bottom-[clamp(1rem,3vh,2rem)] left-0 right-0 z-30 flex justify-center px-[clamp(1rem,4vw,2.5rem)]">
+              <PillArrowButton href="/" label="Alle Mandanteninformationen ansehen" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

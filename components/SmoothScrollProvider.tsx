@@ -8,31 +8,60 @@ type SmoothScrollProviderProps = {
   children: React.ReactNode;
 };
 
+/** Desktop/Tablet: Lenis + ScrollTrigger.update. Mobil (≤767px): natives Scrollen — weniger JS, bessere Scroll-Performance. */
 export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
 
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      wheelMultiplier: 0.85,
-      touchMultiplier: 1,
-      syncTouch: true,
-    });
+    const mobile = window.matchMedia("(max-width: 767px)");
 
-    lenis.on("scroll", ScrollTrigger.update);
-
+    let lenis: Lenis | null = null;
     let rafId = 0;
-    const update = (time: number) => {
-      lenis.raf(time);
-      rafId = window.requestAnimationFrame(update);
-    };
-    rafId = window.requestAnimationFrame(update);
 
-    return () => {
+    const loop = (time: number) => {
+      lenis?.raf(time);
+      rafId = window.requestAnimationFrame(loop);
+    };
+
+    const stopLoop = () => {
       window.cancelAnimationFrame(rafId);
-      lenis.destroy();
+      rafId = 0;
+    };
+
+    const destroyLenis = () => {
+      stopLoop();
+      lenis?.destroy();
+      lenis = null;
+    };
+
+    const createLenis = () => {
+      if (lenis) return;
+      lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 0.85,
+        touchMultiplier: 1,
+        syncTouch: true,
+      });
+      lenis.on("scroll", ScrollTrigger.update);
+      rafId = window.requestAnimationFrame(loop);
+    };
+
+    const sync = () => {
+      if (mobile.matches) {
+        destroyLenis();
+      } else {
+        createLenis();
+      }
+      ScrollTrigger.refresh();
+    };
+
+    sync();
+    mobile.addEventListener("change", sync);
+    return () => {
+      mobile.removeEventListener("change", sync);
+      destroyLenis();
     };
   }, []);
 
