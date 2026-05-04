@@ -1,0 +1,188 @@
+{
+  "version": "2.0",
+  "purpose": "Awwwards-level design evaluation and FULL PAGE FLOW system",
+
+  "styles": {
+    "minimal_luxury": {
+      "motion": "slow_smooth",
+      "density": "low",
+      "animation_limit": 2,
+      "easing": ["power2.out", "power3.out"],
+      "forbidden": ["bounce", "elastic"]
+    },
+    "tech_modern": {
+      "motion": "medium_precise",
+      "density": "medium",
+      "animation_limit": 3,
+      "easing": ["power2.out", "expo.out"],
+      "forbidden": ["chaotic_motion"]
+    },
+    "playful": {
+      "motion": "fast_dynamic",
+      "density": "high",
+      "animation_limit": 4,
+      "easing": ["back.out", "elastic.out"],
+      "forbidden": []
+    }
+  },
+
+  "global_constraints": {
+    "max_animations_per_section": 3,
+    "require_easing": true,
+    "require_stagger_for_text": true,
+    "forbidden": [
+      "linear_easing_only",
+      "simultaneous_uncoordinated_animations",
+      "layout_thrashing",
+      "top_left_position_animation"
+    ]
+  },
+
+  "timing_rules": {
+    "stagger_required": true,
+    "allow_overlap": true,
+    "min_stagger": 0.03,
+    "max_stagger": 0.12,
+    "recommended_duration": {
+      "fast": 0.6,
+      "normal": 1.0,
+      "slow": 1.4
+    },
+    "delay_rules": [
+      "avoid_all_zero_delays",
+      "use_negative_delay_for_overlap"
+    ]
+  },
+
+  "flow_rules": {
+    "required_structure": ["hero", "content", "content", "gallery", "content", "footer"],
+    "progression": {
+      "start": "impact",
+      "middle": "information",
+      "end": "conversion"
+    },
+    "variation_rules": [
+      "alternate_layouts_left_right",
+      "avoid_repeating_same_animation_back_to_back",
+      "increase_visual_density_then_reduce",
+      "every_section_must_feel_distinct",
+      "use_intentional_shape_language_SVG_clip_path_bands_not_only_rectangles",
+      "coordinate_section_motion_with_global_page_flow_AWWWARDS_md"
+    ],
+    "rhythm_rules": [
+      "mix_fast_and_slow_sections",
+      "insert_visual_rest_sections",
+      "avoid_constant_animation_intensity",
+      "animation_count_and_duration_must_feel_fluid_timelines_stagger_scrub_coherent",
+      "refresh_scrolltrigger_after_layout_so_timing_stays_smooth_across_breakpoints"
+    ]
+  },
+
+  "cross_section_constraints": {
+    "no_repeated_pattern_sequence": true,
+    "max_same_animation_in_row": 2,
+    "require_layout_variation": true,
+    "require_scale_contrast": true
+  },
+
+  "scoring": {
+    "threshold": 35,
+    "flow_threshold": 40,
+    "categories": {
+      "motion_quality": {
+        "weight": 1,
+        "checks": [
+          "uses_easing",
+          "uses_stagger",
+          "timeline_coordinated",
+          "no_abrupt_starts"
+        ]
+      },
+      "restraint": {
+        "weight": 1,
+        "checks": [
+          "respects_animation_limit",
+          "no_animation_spam",
+          "one_primary_focus"
+        ]
+      },
+      "clarity": {
+        "weight": 1,
+        "checks": [
+          "clear_visual_hierarchy",
+          "text_readable_during_animation",
+          "consistent_spacing",
+          "no_layout_clutter"
+        ]
+      },
+      "aesthetic": {
+        "weight": 1,
+        "checks": [
+          "consistent_style",
+          "good_typography_scale",
+          "balanced_whitespace",
+          "modern_visual_language"
+        ]
+      },
+      "originality": {
+        "weight": 1,
+        "checks": [
+          "not_template_like",
+          "has_subtle_unique_motion",
+          "avoids_generic_patterns"
+        ]
+      }
+    }
+  },
+
+  "flow_scoring": {
+    "checks": [
+      "sections_feel_connected",
+      "clear_beginning_middle_end",
+      "no_repetitive_patterns",
+      "good_visual_rhythm",
+      "progressive_storytelling"
+    ]
+  },
+
+  "section_rules": {
+    "hero": {
+      "required": ["text_reveal"],
+      "allowed": ["image_scale_in", "fade_up", "nav_fade"],
+      "max_animations": 3,
+      "focus": "strong_visual_anchor"
+    },
+    "content": {
+      "required": ["fade_up"],
+      "allowed": ["parallax_light", "text_reveal"],
+      "max_animations": 2,
+      "focus": "readability"
+    },
+    "gallery": {
+      "required": ["image_reveal"],
+      "allowed": ["parallax", "hover_zoom"],
+      "max_animations": 3,
+      "focus": "visual_flow"
+    },
+    "footer": {
+      "required": ["fade_up"],
+      "allowed": ["minimal_motion"],
+      "max_animations": 1,
+      "focus": "closure"
+    }
+  },
+
+  "evaluation_logic": {
+    "pass_condition": "total_score >= threshold AND flow_score >= flow_threshold",
+    "fail_action": "regenerate_with_adjustments",
+    "adjustment_rules": [
+      "reduce_animation_count",
+      "improve_timing_stagger",
+      "simplify_motion",
+      "increase_spacing",
+      "remove_conflicting_effects",
+      "introduce_section_variation",
+      "improve_flow_rhythm"
+    ]
+  }
+}

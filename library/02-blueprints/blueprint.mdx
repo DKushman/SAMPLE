@@ -1,0 +1,38 @@
+---
+id: section
+purpose: Communicate each section’s intent through clear hierarchy, consequence-led messaging, and restrained motion
+layout_variants: [grid-3col, alternating-media, icon-list-dense, full-bleed-media, split-copy-media]
+content_required: [headline, supporting_copy]
+content_optional: [eyebrow, cta, media, list_items, stats, testimonials]
+animation_category: reveal  # references motion.tokens.json
+---
+
+## Design Intent
+Every section must feel **earned**, not templated. Value is communicated through **consequence** (what becomes possible for the visitor) rather than **specification** (internal feature lists). The visual hierarchy must make the primary message or lead element read first, even in dense or grid-based layouts.
+
+## Motion & structure (GSAP)
+
+**Animations must be implemented with GSAP** (timelines, `ScrollTrigger`, and plugins where needed)—not with ad-hoc CSS-only scroll hacks for primary narrative motion. Each section’s **layout and motion are designed and built together with GSAP**, not bolted on after layout is fixed.
+
+Use GSAP deliberately for **full-page flow** and section-scale choreography, including when appropriate:
+
+- **Pinned / sticky stages:** `ScrollTrigger` **pin** so the viewport (or a key panel) **stays fixed** while copy, media, or steps advance in phases—story beats stay readable instead of racing past in one scroll flick.
+- **Horizontal progression:** **Horizontal scroll or track** (gallery, timeline, narrative strip) **scrubbed or driven by vertical scroll**—vertical scroll remains the main user gesture; horizontal motion is **mapped** (e.g. `x` + `scrub`) so it feels intentional, not a nested scroll trap.
+- **Scroll-linked timelines:** Reveals, staggers, and state changes **tied to scroll progress** (`scrub`, start/end ranges) so motion and layout read as one system.
+
+Motion must still **clarify hierarchy and reading order** (earned emphasis), not decorate a generic block stack. Respect reduced-motion and accessibility (see `library/01-constraints/motion.md`, `library/01-constraints/accessibility.md`). Follow `tokens/motion.tokens.json` and official patterns from [greensock/gsap-skills](https://github.com/greensock/gsap-skills). **Visual moodboard + GSAP keyword guide:** `library/02-blueprints/README.md` (and PNGs in that folder).
+
+**Whole-page flow:** Coordinate **timing, stagger, scrub** and **how many** elements move per section so the scroll journey feels **fluid** across sections—not a pile of unrelated tricks. **`AWWWARDS.md`** (sections on flow and shapes) plus **`library/02-blueprints/design-flow.json`** are the workflow anchors.
+
+**Shape language:** Layout is not only grids—use **intentional geometry** (bands, cuts, arcs, SVG/masks) so sections feel editorial and distinct while staying performant (`transform`/`opacity` for motion on shapes).
+
+## Layout Rules
+- Avoid equal visual weight across all competing elements — introduce hierarchy through size, position, or typographic variation
+- Rhythm should break at least once per section where it helps the story (asymmetric item, spanning element, or deliberate whitespace)
+- Icons: use only if they add semantic meaning, never as filler. Prefer illustrated or photographic moments over generic icon libraries
+
+## Anti-Patterns
+- Equal-height cards with centered icon/title/body as the default for every block — the generic UI-kit pattern
+- Decorative gradients behind content blocks without narrative reason
+- “Check icon + one-liner” laundry lists without hierarchy
+- Uniform grids that scan identically left-to-right with no focal point

@@ -1,0 +1,62 @@
+# FEATURES SECTION — ALLOWED VARIATIONS
+# =======================================
+# Diese Varianten sind erlaubt. Alles andere ist Anti-Pattern.
+# Jede Variante MUSS die Asymmetrie-Regel einhalten (erstes Item dominant).
+
+variants:
+
+  # ── SPLIT ─────────────────────────────────────────────────────────────────
+  # Zwei Spalten. Links: Featured (volle Höhe). Rechts: gestapelte kleinere Items.
+  # Inspiration: Bild 6 (AP House Miami Layout)
+  split:
+    structure: "1 featured left (60%) + N stacked right (40%)"
+    featured_size: "dominant — große Typografie, optionales Bild overflow nach oben"
+    secondary_size: "kompakt — Headline + 1 Zeile Body, kein Visual"
+    max_items: 4
+    constraint: "Rechte Spalte max 3 Items. Mehr = zu dicht."
+
+  # ── ROWS ──────────────────────────────────────────────────────────────────
+  # Horizontale Rows. Erstes Item: volle Breite, riesige Type.
+  # Rest: 3-spaltige Rows (Index | Headline | Body)
+  # Inspiration: Bild 1 (Brand Strategy Rows)
+  rows:
+    structure: "1 featured full-width + N horizontal rows"
+    featured_size: "clamp(3rem, 8vw, 7rem) — Headline ist das Layout"
+    secondary_size: "clamp(1.5rem, 3vw, 2.5rem)"
+    max_items: 6
+    constraint: "Rows müssen sich durch Größe unterscheiden, nicht nur Farbe."
+
+  # ── STACKED ───────────────────────────────────────────────────────────────
+  # Vertikaler Stack. Abwechselnde Layout-Richtung (links/rechts).
+  # Immer: erstes Item nimmt 2/3 der Breite.
+  # Inspiration: Bild 5 (AE.1 — Text über Bild layering)
+  stacked:
+    structure: "vertical stack, alternating image side"
+    featured_size: "2/3 width, bild darf Container nach oben/unten brechen"
+    secondary_size: "1/2 width, weniger Bild-Präsenz"
+    max_items: 4
+    constraint: "Bild MUSS Container brechen (overflow oder overlap). Niemals artig zentriert."
+
+  # ── EDITORIAL ─────────────────────────────────────────────────────────────
+  # Typografie ist das Layout. Bilder als Inline-Elemente.
+  # Inspiration: Bild 3 (adcker — FOR BEAUTY FASHION WELLNESS)
+  editorial:
+    structure: "display-size type fills viewport, images inline in text flow"
+    featured_size: "clamp(4rem, 12vw, 10rem) — typografie ist das grid"
+    secondary_size: "n/a — kein secondary, nur ein Block"
+    max_items: 1
+    constraint: "Nur für Hero-nahe Sections. Nicht für 6 gleichwertige Features."
+
+# ── GLOBAL CONSTRAINTS ────────────────────────────────────────────────────────
+# Diese Regeln gelten für ALLE Varianten.
+
+rules:
+  - "item[0] ist immer visuell stärker als item[1..n]"
+  - "max. 2 Items dürfen die gleiche visuelle Gewichtung haben"
+  - "kein Item bekommt generic fade-in-up — motion ist variiert"
+  - "section label ist immer klein (mono, xs, tracking-wide)"
+  - "background-wechsel zwischen Items ist erlaubt, nicht required"
+
+anti_pattern_check:
+  before_generating: "Gibt es 3 oder mehr gleich große Cards nebeneinander?"
+  if_yes: "STOP — wähle split oder rows stattdessen"

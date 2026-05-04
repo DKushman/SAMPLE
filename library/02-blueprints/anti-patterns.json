@@ -1,0 +1,116 @@
+[
+  {
+    "name": "repetitive_text_reveal",
+    "description": "Same staggered text animation used on every section",
+    "problem": "Feels templated and predictable",
+    "rule": "Do not use text-reveal more than 2 times per page"
+  },
+  {
+    "name": "animation_spam",
+    "description": "Every element animates on scroll",
+    "problem": "Overwhelming and amateur",
+    "rule": "Limit animations to key elements only"
+  },
+  {
+    "name": "no_motion_hierarchy",
+    "description": "All animations have same importance",
+    "problem": "No clear focus or visual guidance",
+    "rule": "Define one primary animation per section"
+  },
+  {
+    "name": "simultaneous_start",
+    "description": "All animations start at the same time",
+    "problem": "Feels robotic and unnatural",
+    "rule": "Always use stagger or delay variation"
+  },
+  {
+    "name": "default_easing",
+    "description": "Linear or default easing everywhere",
+    "problem": "Cheap and unnatural motion",
+    "rule": "Use power2.out or power3.out as default"
+  },
+  {
+    "name": "overused_purple_gradient",
+    "description": "Generic purple/blue gradient background",
+    "problem": "Looks like generic AI startup template",
+    "rule": "Avoid default gradients unless customized"
+  },
+  {
+    "name": "glassmorphism_overuse",
+    "description": "Too many blurred glass cards",
+    "problem": "Visual clutter and trend overuse",
+    "rule": "Use glass effects sparingly (max 1-2 elements)"
+  },
+  {
+    "name": "centered_everything",
+    "description": "All content centered with no layout variation",
+    "problem": "Boring and lacks design rhythm",
+    "rule": "Alternate between centered and asymmetrical layouts"
+  },
+  {
+    "name": "no_spacing_system",
+    "description": "Inconsistent padding and margins",
+    "problem": "Messy and unprofessional look",
+    "rule": "Use consistent spacing scale"
+  },
+  {
+    "name": "too_many_font_styles",
+    "description": "Multiple fonts and weights without system",
+    "problem": "Breaks visual consistency",
+    "rule": "Limit to 1-2 font families and defined scale"
+  },
+  {
+    "name": "fake_3d_overkill",
+    "description": "Excessive 3D transforms and rotations",
+    "problem": "Distracting and gimmicky",
+    "rule": "Use 3D effects only when meaningful"
+  },
+  {
+    "name": "hover_everything",
+    "description": "Every element has hover animation",
+    "problem": "No hierarchy, feels noisy",
+    "rule": "Apply hover only to interactive elements"
+  },
+  {
+    "name": "no_visual_rest",
+    "description": "Every section is visually intense",
+    "problem": "User fatigue",
+    "rule": "Include calm sections with minimal motion"
+  },
+  {
+    "name": "copy_paste_sections",
+    "description": "Sections look identical with minor text changes",
+    "problem": "Feels like template reuse",
+    "rule": "Each section must have distinct layout or behavior"
+  },
+  {
+    "name": "inconsistent_animation_style",
+    "description": "Mixing playful, bouncy and minimal animations",
+    "problem": "Breaks brand feeling",
+    "rule": "Stick to one motion style per page"
+  },
+  {
+    "name": "too_fast_animations",
+    "description": "Animations under 0.4s everywhere",
+    "problem": "Feels cheap and rushed",
+    "rule": "Use 0.6s–1.4s for most animations"
+  },
+  {
+    "name": "too_many_simultaneous_effects",
+    "description": "Scale + rotate + blur + opacity all at once",
+    "problem": "Chaotic and hard to read",
+    "rule": "Limit to 1-2 properties per animation"
+  },
+  {
+    "name": "no_scroll_narrative",
+    "description": "Sections feel disconnected",
+    "problem": "No storytelling or flow",
+    "rule": "Ensure logical progression between sections"
+  },
+  {
+    "name": "cta_blends_in",
+    "description": "Call-to-action not visually distinct",
+    "problem": "Low conversion and poor UX",
+    "rule": "CTA must stand out clearly"
+  }
+]

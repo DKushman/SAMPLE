@@ -1,0 +1,61 @@
+# Kurz-Discovery: nur Kontext für Ästhetik (Client, Zielgruppe, Ton)
+# Wenige Fragen — Farben & Look kommen aus der Bibliothek, nicht aus Raten.
+
+meta:
+  version: 2
+  locale: de
+  title: Ästhetik-Kontext — minimale Fragen vor dem Bau
+
+  # Lesbar für Mensch & KI: nicht verhandelbar.
+  aesthetic_mandate: |
+    === ÄSTHETIK: AN DIE BIBLIOTHEK GEBUNDEN ===
+    Die visuelle Umsetzung hält sich an die **vorgefertigten Farben, Token und die
+    etablierte Ästhetik dieses Projekts** (Farb-/Token-Index unter `tokens/`,
+    ggf. `brand-override.tokens.json` nur wenn ihr Projekt das explizit definiert).
+    Keine eigenwillige Parallel-Palette und kein „neues“ Design-System erfinden:
+    **Spacing, Typo, Motion und UI-Rhythmus** folgen `library/01-constraints/*` und den
+    Blueprints unter `library/02-blueprints/*`. Die folgenden Fragen dienen nur dazu, **Inhalt und Stimmung**
+    (Client, Audience, Ton) zu schärfen — nicht die Farblehre zu ersetzen.
+
+  output_artifact_primary: brief.md
+  output_artifact_note: "Kurzbrief in brief.md unter client / audience / tone; keine Pflicht für page-structure, manual-sections oder brand-overrides aus diesem Katalog."
+
+phases:
+  - id: aesthetic_context
+    title: Kontext für Stimmung & Copy — nicht für Farben
+    maps_to_artifact: brief.md
+    questions:
+      - id: ctx_client_who
+        prompt_de: "**Client-Kontext:** Wer ist die Marke oder Organisation — und was soll Besucher:innen in einem Satz über sie klar werden?"
+        priority: P0
+        type: free_text
+        maps_to: "brief.md#client.context"
+
+      - id: ctx_client_why_site
+        prompt_de: "**Client-Kontext:** Warum genau diese Website jetzt — was soll sie für das Business emotional und fachlich leisten?"
+        priority: P0
+        type: free_text
+        maps_to: "brief.md#client.purpose"
+
+      - id: ctx_audience_who
+        prompt_de: "**Zielgruppe:** Wer soll sich auf der Seite primär angesprochen fühlen? (Rolle, Situation, was sie mitbringen)"
+        priority: P0
+        type: free_text
+        maps_to: "brief.md#audience.primary"
+
+      - id: ctx_tone_adjectives
+        prompt_de: "**Emotionaler Ton:** Welche 3–5 Begriffe sollen die Stimmung beschreiben? (z. B. ruhig, selbstbewusst, warm, technisch, verspielt)"
+        priority: P0
+        type: free_text
+        maps_to: "brief.md#tone.adjectives"
+
+      - id: ctx_tone_avoid
+        prompt_de: "**Emotionaler Ton:** Was soll die Seite bewusst **nicht** transportieren? (Tabus, verhasste Assoziationen, zu vermeidende Wörter)"
+        priority: P1
+        type: free_text
+        maps_to: "brief.md#tone.avoid"
+
+closing_checklist:
+  prompt_de: "Passt die Kurzfassung? Ich halte mich bei Farben & Layout an den Bibliotheks-Index/Tokens — Stimmung leite ich aus deinen Antworten ab."
+  priority: P0
+  type: boolean
