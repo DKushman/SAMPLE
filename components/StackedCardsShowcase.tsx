@@ -1,6 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 import { useRef } from "react";
 import { PillArrowButton } from "@/components/PillArrowButton";
 import { gsap, ScrollTrigger } from "@/lib/gsap-client";
@@ -194,7 +195,7 @@ export function StackedCardsShowcase({
         </p>
         <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
           {STACK_CARDS.map((card) => (
-            <a
+            <Link
               key={card.id}
               href="/"
               id={`stack-showcase-static-${card.id}`}
@@ -220,7 +221,7 @@ export function StackedCardsShowcase({
                   />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="mx-auto mt-[clamp(1.2rem,3vw,2rem)] flex w-full max-w-[42rem] justify-center px-[clamp(1rem,4vw,2.5rem)]">
@@ -252,7 +253,7 @@ export function StackedCardsShowcase({
           className="absolute bottom-0 left-0 right-0 top-[clamp(14vh,20vh,26vh)] flex justify-center px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(0.75rem,3vh,1.5rem)] [--stack-under-h3:clamp(4rem,7vw,5.75rem)] [--stack-card-height:78vh]"
         >
           {cardsDom.map((card, stackIndex) => (
-            <a
+            <Link
               key={card.id}
               href="/"
               ref={(node) => {
@@ -288,7 +289,7 @@ export function StackedCardsShowcase({
                   />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="absolute bottom-[clamp(1rem,3vh,2rem)] left-0 right-0 z-30 flex justify-center px-[clamp(1rem,4vw,2.5rem)]">

@@ -10,6 +10,7 @@ import {
   HERO_FIGURE_IN_DURATION_S,
   HERO_FIGURE_OFFSET_S,
 } from "@/lib/heroRevealTiming";
+import { publicAssetPath } from "@/lib/publicAssetPath";
 import { HeroHeadline } from "@/components/HeroHeadline";
 import { IntroPreloader } from "@/components/IntroPreloader";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -604,7 +605,7 @@ export function LandingPage() {
                     />
                     <img
                       id="hero-image"
-                      src="/kanzlei_250219.2000x770.jpg"
+                      src={publicAssetPath("/kanzlei_250219.2000x770.jpg")}
                       alt="Außenansicht und Eingangsbereich der Kanzlei Tegtmeier &amp; Partner."
                       className="block h-full w-full object-cover object-center"
                       loading="eager"
@@ -659,7 +660,7 @@ export function LandingPage() {
                   <figure id={`sticky-services-list-image-wrap-${step.id}`} className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
                       id={`sticky-services-list-image-${step.id}`}
-                      src={step.imageSrc}
+                      src={publicAssetPath(step.imageSrc)}
                       alt={step.imageAlt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 70rem"
@@ -725,7 +726,7 @@ export function LandingPage() {
                     >
                       <Image
                         id={`sticky-services-background-image-${step.id}`}
-                        src={step.imageSrc}
+                        src={publicAssetPath(step.imageSrc)}
                         alt={step.imageAlt}
                         fill
                         sizes="100vw"
@@ -799,7 +800,7 @@ export function LandingPage() {
                           >
                             <Image
                               id={`sticky-services-card-image-${step.id}`}
-                              src={step.imageSrc}
+                              src={publicAssetPath(step.imageSrc)}
                               alt={step.imageAlt}
                               fill
                               sizes="(max-width: 1024px) 85vw, 32rem"

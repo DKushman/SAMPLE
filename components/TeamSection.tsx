@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { useCallback, useRef } from "react";
 import { gsap } from "@/lib/gsap-client";
+import { publicAssetPath } from "@/lib/publicAssetPath";
 
 type TeamMember = {
   id: string;
@@ -203,7 +204,7 @@ export function TeamSection() {
             >
               <img
                 id={`team-section-card-image-${member.id}`}
-                src={member.imageSrc}
+                src={publicAssetPath(member.imageSrc)}
                 alt={`Porträt von ${member.name}`}
                 loading="lazy"
                 decoding="async"

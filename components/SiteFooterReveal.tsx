@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { PillArrowButton } from "@/components/PillArrowButton";
+import { publicAssetPath } from "@/lib/publicAssetPath";
 
 export function SiteFooterReveal() {
   const footerRef = useRef<HTMLElement | null>(null);
@@ -67,14 +68,18 @@ export function SiteFooterReveal() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setFooterRevealOffsetPx(0);
-      return;
+      const id = window.requestAnimationFrame(() =>
+        setFooterRevealOffsetPx(0),
+      );
+      return () => window.cancelAnimationFrame(id);
     }
 
     const spacerEl = document.getElementById("site-footer-reveal-spacer");
     if (!spacerEl) {
-      setFooterRevealOffsetPx(0);
-      return;
+      const id = window.requestAnimationFrame(() =>
+        setFooterRevealOffsetPx(0),
+      );
+      return () => window.cancelAnimationFrame(id);
     }
 
     let rafId = 0;
@@ -192,7 +197,7 @@ export function SiteFooterReveal() {
           className="mt-[clamp(1rem,2.3vw,1.8rem)] block w-full"
         >
           <Image
-            src="/TEGTMEIER%20%26%20PARTNER.png"
+            src={publicAssetPath("/TEGTMEIER%20%26%20PARTNER.png")}
             alt="TEGTMEIER & PARTNER"
             width={2400}
             height={300}

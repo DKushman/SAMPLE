@@ -1,7 +1,21 @@
 import type { NextConfig } from "next";
 
+/** Ohne führenden Slash, z. B. `VERKAUF-WEBSITE` für https://user.github.io/VERKAUF-WEBSITE/ */
+function normalizeBasePath(raw: string | undefined): string {
+  if (!raw) return "";
+  const trimmed = raw.trim().replace(/^\/+|\/+$/g, "");
+  return trimmed ? `/${trimmed}` : "";
+}
+
+const basePath = normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH);
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  ...(basePath ? { basePath } : {}),
 };
 
 export default nextConfig;
