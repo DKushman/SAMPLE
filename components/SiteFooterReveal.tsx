@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { PillArrowButton } from "@/components/PillArrowButton";
 import { publicAssetPath } from "@/lib/publicAssetPath";
 
 export function SiteFooterReveal() {
   const footerRef = useRef<HTMLElement | null>(null);
-  const [footerShiftPx, setFooterShiftPx] = useState(0);
-  const [footerRevealOffsetPx, setFooterRevealOffsetPx] = useState(64);
 
   useEffect(() => {
     const footerEl = footerRef.current;
@@ -33,85 +31,79 @@ export function SiteFooterReveal() {
   }, []);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const footerEl = footerRef.current;
+    if (!footerEl) return;
 
-    let lastScrollY = window.scrollY;
-    let rafId = 0;
-    let settleTimer = 0;
-
-    const onScroll = () => {
-      if (rafId) return;
-      rafId = window.requestAnimationFrame(() => {
-        const nextY = window.scrollY;
-        const delta = nextY - lastScrollY;
-        lastScrollY = nextY;
-
-        if (delta < 0) {
-          setFooterShiftPx(Math.min(26, Math.abs(delta) * 0.62));
-          window.clearTimeout(settleTimer);
-          settleTimer = window.setTimeout(() => setFooterShiftPx(0), 240);
-        } else {
-          setFooterShiftPx((prev) => Math.max(0, prev - 2.2));
-        }
-
-        rafId = 0;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.cancelAnimationFrame(rafId);
-      window.clearTimeout(settleTimer);
-    };
-  }, []);
-
-  useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const id = window.requestAnimationFrame(() =>
-        setFooterRevealOffsetPx(0),
-      );
-      return () => window.cancelAnimationFrame(id);
+      footerEl.style.transform = "translate3d(0, 0px, 0)";
+      return;
     }
 
     const spacerEl = document.getElementById("site-footer-reveal-spacer");
     if (!spacerEl) {
-      const id = window.requestAnimationFrame(() =>
-        setFooterRevealOffsetPx(0),
-      );
-      return () => window.cancelAnimationFrame(id);
+      footerEl.style.transform = "translate3d(0, 0px, 0)";
+      return;
     }
 
-    let rafId = 0;
-    const updateRevealOffset = () => {
+    let lastScrollY = window.scrollY;
+    let shiftPx = 0;
+    let revealOffsetPx = 64;
+    let pendingRaf = 0;
+    let settleTimer = 0;
+    let lastAppliedTransform = "";
+
+    const applyTransform = () => {
+      const transform = `translate3d(0, ${revealOffsetPx + shiftPx}px, 0)`;
+      if (transform !== lastAppliedTransform) {
+        footerEl.style.transform = transform;
+        lastAppliedTransform = transform;
+      }
+    };
+
+    const updateFooterPosition = () => {
+      pendingRaf = 0;
       const rect = spacerEl.getBoundingClientRect();
       const viewportH = window.innerHeight;
-
-      // Keep footer lower at first, then bring it up while scrolling near footer area.
       const revealStart = viewportH * 1.02;
       const revealEnd = viewportH * 0.02;
       const progress = Math.min(
         1,
         Math.max(0, (revealStart - rect.top) / Math.max(1, revealStart - revealEnd)),
       );
+      revealOffsetPx = (1 - progress) * 64;
 
-      setFooterRevealOffsetPx((1 - progress) * 64);
-      rafId = 0;
+      const nextY = window.scrollY;
+      const delta = nextY - lastScrollY;
+      lastScrollY = nextY;
+
+      if (delta < 0) {
+        shiftPx = Math.min(26, Math.abs(delta) * 0.62);
+        window.clearTimeout(settleTimer);
+        settleTimer = window.setTimeout(() => {
+          shiftPx = 0;
+          applyTransform();
+        }, 180);
+      } else {
+        shiftPx = Math.max(0, shiftPx - 2.2);
+      }
+
+      applyTransform();
     };
 
     const onScrollOrResize = () => {
-      if (rafId) return;
-      rafId = window.requestAnimationFrame(updateRevealOffset);
+      if (pendingRaf) return;
+      pendingRaf = window.requestAnimationFrame(updateFooterPosition);
     };
 
-    updateRevealOffset();
+    applyTransform();
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     window.addEventListener("resize", onScrollOrResize);
 
     return () => {
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
-      window.cancelAnimationFrame(rafId);
+      window.cancelAnimationFrame(pendingRaf);
+      window.clearTimeout(settleTimer);
     };
   }, []);
 
@@ -119,9 +111,9 @@ export function SiteFooterReveal() {
     <footer
       ref={footerRef}
       id="site-footer-reveal"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-0 rounded-tl-[clamp(1rem,2.2vw,1.8rem)] rounded-tr-[clamp(1rem,2.2vw,1.8rem)] bg-[#273149] text-white transition-transform duration-450 ease-[cubic-bezier(0.25,1,0.35,1)]"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-0 rounded-tl-[clamp(1rem,2.2vw,1.8rem)] rounded-tr-[clamp(1rem,2.2vw,1.8rem)] bg-[#273149] text-white will-change-transform"
       aria-label="Site footer"
-      style={{ transform: `translate3d(0, ${footerRevealOffsetPx + footerShiftPx}px, 0)` }}
+      style={{ transform: "translate3d(0, 64px, 0)" }}
     >
       <div
         id="site-footer-shell"
