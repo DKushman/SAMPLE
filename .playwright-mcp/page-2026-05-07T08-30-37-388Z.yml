@@ -1,0 +1,69 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Bezirksamt Hamburg-Harburg" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - option "Aussenansicht visualisation" [ref=e47]:
+          - img [ref=e49]
+          - generic [ref=e50]: Aussenansicht visualisation
+        - option:
+          - generic:
+            - img
+          - generic: Lageplan site plan
+        - option:
+          - generic:
+            - img
+          - generic: Grundriss EG Ground floor
+        - option:
+          - generic:
+            - img
+          - generic: Foyer foyer
+      - img [ref=e51] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - text: Das neue Verwaltunsgebäude des Bezirksamtes Hamburg-Harburg liegt im Süden der Hansestadt unmittelbar angrenzend an die Bahnstation am Neugrabener Bahnhof.
+        - text: LAN Architekten Paris und STUDIO MARS Berlin (MARS Architekten) konzipierten ein 7-geschossiges multifuntionales Gebäude von zurückhaltender Eleganz, das über das großzügige 3-geschossige Foyer verschiedene Funktionsbereiche miteinander verbindet.
+        - text: Fertigstellung ist geplant für das Jahr 2022.
+      - generic [ref=e56]:
+        - text: Status LP 2 abgeschlossen, pausiert
+        - text: Kategorie Nichtoffener Wettbewerb
+        - text: Ort Hamburg, Deutschland
+        - text: Auftraggeber Bezirksamt Harburg
+        - text: Entwurf LAN Architecture Paris / STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Pascal Besson
+        - text: Fläche 3.300m² BGF
+        - text: Budget 7,45 Mio. Euro
+        - text: Jahr 2022
+        - text: Leistungsphasen Wettbewerb
+        - text: Projektbeteiligte /
+  - generic [ref=e61]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

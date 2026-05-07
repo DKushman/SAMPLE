@@ -1,0 +1,103 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Aparthotel Marcié" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - option "Visualisierung Gartenperspektive am Tag Visualisation garden view at daytime" [ref=e47]:
+          - img [ref=e49]
+          - generic [ref=e50]: Visualisierung Gartenperspektive am Tag Visualisation garden view at daytime
+        - option:
+          - generic:
+            - img
+          - generic: Visualisierung Straßenperspektive Visualisation street view
+        - option:
+          - generic:
+            - img
+          - generic: Gartenansicht Garden elevation
+        - option:
+          - generic:
+            - img
+          - generic: Straßenansicht Street elevation
+        - option:
+          - generic:
+            - img
+          - generic: Grundriss EG Floor plan ground floor
+        - option:
+          - generic:
+            - img
+          - generic: Grundriss 1.OG Floor plan 1st floor
+        - option:
+          - generic:
+            - img
+          - generic: Grundriss DG Floor plan attic
+        - option:
+          - generic:
+            - img
+          - generic: Visualisierung Innenbereich Terrasse Visualisation interior area terrace
+        - option:
+          - generic:
+            - img
+          - generic: Visualisierung Innenbereich Hotelzimmer Visualisation interior hotel room
+        - option:
+          - generic:
+            - img
+          - generic: Visualisierung Innenbereich Hotelzimmer Visualisation interior hotel room
+        - option:
+          - generic:
+            - img
+          - generic: Modell Straßenansicht Model street elevation
+        - option:
+          - generic:
+            - img
+          - generic: Modell Detail Model detail
+        - option:
+          - generic:
+            - img
+          - generic: Visualisierung Gartenperspektive bei Nacht Garden view at nighttime
+      - img [ref=e51] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - text: Das Grundstück befindet sich in zentraler Lage der City West der Hauptstadt Berlin. Das bekannte KaDeWe liegt mit einem Laufweg von unter 10 min in umittelbarer Nähe, ebenso der Berliner Ku'damm mit seinen vielen Einkaufsmöglichkeiten und Freizeitangeboten. Das Grundstück grenzt an das Berliner Szeneviertel Schöneberg mit zahlreichen Restaurants, Cafés und Nachtclubs an. Auf der Regelgeschossfläche des Hotels organisieren sich 7
+        - text: Hoteleinheiten à 35m² um einen zentralen Mittelflur. Ein Frühstücksraum im EG, eine dem Garten zugewandte Bar sowie ein unterirdischer Spa-Bereich komplettieren das Hotel.
+      - generic [ref=e56]:
+        - text: Status Planung abgeschlossen
+        - text: Kategorie Neubau, Hotel
+        - text: Ort Berlin, Deutschland
+        - text: Auftraggeber Privat
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Yu Kamijo, Marc Wendland
+        - text: Visualisierung Imaging Collective
+        - text: Fläche 3.485m² BGF
+        - text: Jahr 2016-2017
+        - text: Leistungsphasen LPH 1-2
+  - generic [ref=e61]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

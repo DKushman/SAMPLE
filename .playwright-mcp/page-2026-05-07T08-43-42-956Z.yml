@@ -1,0 +1,114 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Wettbewerb “Serielles und modulares Bauen 2.0”" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - option [ref=e47]:
+          - img [ref=e49]
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+      - img [ref=e50] [cursor=pointer]
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - text: "Vielfalt durch Standard: Die Systemwohnung als Baustein des Systementwurfes"
+        - text: Ziel des vorliegenden Systementwurfes ist es eine möglichst große räumliche, funktionale, städtebauliche und architektonische Vielfalt zu erzeugen und diese auf einem erschwinglichen Kostenniveau einer maximal breiten Bevölkerungsschicht zugänglich zu machen.
+        - text: "Das vorliegende Konzept entwickelt diese Vielfalt durch städtebaulich und gestalterisch hochwertige Lösungen auf Grundlage einer standardisierten Systemwohnung, die aus den räumlichen und funktionalen Anforderungen des zeitgemäßen sozialen Wohnungsbaus hergeleitet wurde. Zu diesen berücksichtigten Anforderungen gehören u.a.:"
+        - list [ref=e55]:
+          - listitem [ref=e56]: Wohnqualität (Raumangebot, Möblierbarkeit, Belichtung, Ausrichtung großzügige Balkone, wahlweise offene oder abtrennbare Küchen)
+          - listitem [ref=e57]: Familienfreundlichkeit (Wannenbäder, Gäste-WC ab 4-Zimmer, Kinderzimmer mit Arbeitsplatz und Spielfläche, Elternschlafzimmer in ruhiger Lage)
+          - listitem [ref=e58]: Grundlagen des kostengünstiges Bauen (hohe Gebäudetiefe, ein Schacht pro Wohnung)
+          - listitem [ref=e59]: Förderfähigkeit (100% der Wohnungen möglich)
+          - listitem [ref=e60]: Barrierefreiheit (100% bei alternativer Bestückung mit Duschbad möglich)
+          - listitem [ref=e61]: Funktionale Qualität (div. Abstellräume, Grundrissorganisation von Gebäude und Wohnung)
+          - listitem [ref=e62]: Flexibilität (Vielzahl an Wohnungs- und Gebäudetypen)
+          - listitem [ref=e63]: Flächeneffizienz und technische Effizienz
+        - text: Auf dieser Systemwohnung basieren alle Wohnungstypen von 1-6 Zimmern inklusive gewünschten Sonderwohnformen (Rollstuhlgerechte Wohnungen, Senioren-, Mikro- und Studentenwohnungen sowie Stadtvillen und Townhouses).
+        - text: "Die verschiedenen Wohnungstypen mit identischer Raumanordnung und Wohnungstiefe (Ausnahme: Nord-Süd-orientierte Zeile) bilden wiederum eine Vielzahl von städtischen Gebäudetypen. Die Bandbreite dieser Gebäudetypen beinhaltet:"
+        - list [ref=e64]:
+          - listitem [ref=e65]: Freistehende Einzelgebäude mit 4- bis 8-Spänner-Erschließung
+          - listitem [ref=e66]: Zeilenbebauungen mit Mittelgang oder Spänner-Erschließung
+          - listitem [ref=e67]: Blockrand Bebauung, eigenständig oder als Lückenschluss in flexibel skalierbaren Abmessungen
+        - text: Alle Gebäudetypen können 4- bis 8-geschossig ausgeführt werden und ermöglichen optional eine Gewerbenutzung im Erdgeschoss. Um den Anforderungen einer urbanen Vielfalt gerecht zu werden und um den gewünschten Wohnungsschlüssel zu erzielen, können alle diese Gebäudetypen frei mit 1- bis 6-Zimmer-Wohnungen basierend auf dem Grundriss der Systemwohnung bestückt werden. Im Erdgeschoss können Gewerbeeinheiten das städtische Angebot erweitern und das Quartier aufwerten.
+        - text: "Zusätzlich können die folgenden Sondertypen auf Grundlage der Systemwohnung angeboten werden:"
+        - list [ref=e68]:
+          - listitem [ref=e69]: Stadtvillen, 2- bis 4-geschossig als 2-Spänner
+          - listitem [ref=e70]: Townhouses, 2- bis 4-geschossig, mit Vor- und Hofgarten
+        - text: "Für die qualitative und wirtschaftliche Entwicklung der Gebäudetypen waren insbesondere folgende Kriterien maßgeblich:"
+        - list [ref=e71]:
+          - listitem [ref=e72]: architektonische Qualität, städtebauliche Flexibilität
+          - listitem [ref=e73]: Technologieoffenheit bei Bauweise und technischer Ausstattung
+          - listitem [ref=e74]: Minimale Erschließungs- und Nebenflächen, keine Unterkellerung
+          - listitem [ref=e75]: Flächeneffizienz (> 80% im Regelgeschoss, 81,5% beim Modellgebäude gem. WoFl (Balkone 25%) / BGF-R)
+          - listitem [ref=e76]: Technische Effizienz (1 Schacht je Wohnung, zwei Bad-Typen als Fertignasszelle, Typenküche, hohe Wiederholungsraten aller Bauteile)
+        - text: Als Ergebnis entstehen vielfältige und hochflexible Stadtbausteine, die sich in fast jede urbane Situation einfügen und diese funktional und ästhetisch aufwerten. Durch die konsequente Standardisierung der Wohnungsgrundrisse auf Basis der Systemwohnung entsteht zudem eine hohe Kosteneffizienz durch maximale Flächeneffizienz und hohe Wiederholungsraten. Weiterhin entstehen durch die Selbstähnlichkeit der Wohnungen bedeutende Vorteile in Bewirtschaftung und Vermietung.
+      - generic [ref=e77]:
+        - text: Status Abgeschlossen
+        - text: Kategorie Wettbewerb
+        - text: Ort Deutschlandweit
+        - text: Auftraggeber GdW Bundesverband deutscher Wohnungs- und Immobilienunternehmen e.V.
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Karoly Zubek, Said Tasabhji, Lara Jahn
+        - text: Fläche 2575 m² BGF (je Baukörper)
+        - text: Flächeneffizienz NUF/ BGF(R) = 0,87
+        - text: Jahr 2023
+        - text: Leistungshasen Wettbewerb
+        - text: Projektbeteiligte Köster GmbH
+  - generic [ref=e82]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

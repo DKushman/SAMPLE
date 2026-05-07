@@ -19,16 +19,16 @@ import { SiteFooterReveal } from "@/components/SiteFooterReveal";
 import { ContactCtaSection } from "@/components/ContactCtaSection";
 import { PillArrowButton } from "@/components/PillArrowButton";
 
-/** Sticky-Narrativ & Co. — entfernte lokale JPGs wurden durch Pexels ersetzt. */
-const PEXELS = {
-  maksgelatin:
-    "https://images.pexels.com/photos/4412921/pexels-photo-4412921.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  karola:
-    "https://images.pexels.com/photos/7876088/pexels-photo-7876088.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  cottonbro:
-    "https://images.pexels.com/photos/5985307/pexels-photo-5985307.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  vadutskevich:
-    "https://images.pexels.com/photos/12900435/pexels-photo-12900435.jpeg?auto=compress&cs=tinysrgb&w=1600",
+/** Sticky cards: Inhalte/Bilder aus ausgewählten Projektseiten von mars-berlin.com. */
+const PROJECT_IMAGES = {
+  wohnhausBoyen:
+    "https://freight.cargo.site/t/original/i/1dfaff1d4596fc9cfc545bc57ed02a8203e36d4000f3c796d90128e48bb4d451/BOY-X-MARS-Wohnungsbau-Visualisierung_Champagner_reduced.jpg",
+  wohnenSeheingeschraenkt:
+    "https://freight.cargo.site/t/original/i/58da05eaf213de1799c6dc2808f631a8c81c473287fcd4e0366288de85e9780e/PRS-0-MARS-ABSV_Visu_05_Eingangsbereich_reduced.jpg",
+  bezirksamtHarburg:
+    "https://freight.cargo.site/t/original/i/ec954cec70f10a2ffc739dd1ce386c773c99f95946ffe86585b56e9fc2e393ed/VBN-X-LAN-MARS-Bezirksamt-Hamburg-Harburg_Neugrabener_Bahnhof-aussen.jpg",
+  aparthotelMarcie:
+    "https://freight.cargo.site/t/original/i/7cc2a4874f82a87bc21b9bfc42e008b0dbb359b77b1e7cd49ddde22285cd23d3/AHC-X-MARS-Aparthotel_Marcie-courtyard_day_24.jpg",
 } as const;
 
 /** Hero: lokales Referenzmotiv (Studio Mars). */
@@ -67,43 +67,43 @@ type ProfilPillar = {
   iconPaths: string[];
 };
 
-/** Inhalt aus mars-berlin.com: Home (Projekte), PROFIL, TEAM, KONTAKT. */
+/** Projekt-Highlights aus vier konkreten mars-berlin.com Projektseiten. */
 const STICKY_STORY_STEPS: StickyStoryStep[] = [
   {
-    id: "projekte",
+    id: "wohnhaus-boyen",
     step: "01",
-    title: "Projekte",
+    title: "Wohnhaus Boyenstraße in Berlin-Mitte",
     description:
-      "Von Wohnbau und Sanierung über Schulen und öffentliche Gebäude bis zu Quartieren, Aufstockungen und Wettbewerben — wir bearbeiten ein breites Feld an Bauaufgaben für private und öffentliche Bauherren.",
-    imageSrc: PEXELS.maksgelatin,
-    imageAlt: "Gebäude und Architekturkontext — vielfältige Projekttypen.",
+      "Das 7-geschossige Gebäude fügt sich harmonisch in die bestehende Blockrandbebauung ein. Großzügige Verglasungen zur Straßen- und Hofseite öffnen den Blick über Eisstadion und Nordhafen.",
+    imageSrc: PROJECT_IMAGES.wohnhausBoyen,
+    imageAlt: "Wohnhaus Boyenstraße in Berlin-Mitte.",
   },
   {
-    id: "profil",
+    id: "wohnen-seheingeschraenkt",
     step: "02",
-    title: "Profil",
+    title: "Wohnen für seheingeschränkte Menschen",
     description:
-      "Die Zukunftsfähigkeit eines Projektes steht für unser gesamtes Team im Vordergrund. Wir verfolgen eine ganzheitliche Nachhaltigkeit: flexible Grundrisse, vielseitig nutzbare Tragwerke, redundante Erschließungen und dauerhafte Materialien.",
-    imageSrc: PEXELS.karola,
-    imageAlt: "Planung und Materialien — Nachhaltigkeit im Detail.",
+      "In Berlin-Charlottenburg entstehen 48 Wohnungen mit Gemeinschaftsraum und Fahrradraum. Das Konzept verbindet geförderten Wohnraum, Anforderungen für sehbehinderte Menschen und klimafreundliches Bauen.",
+    imageSrc: PROJECT_IMAGES.wohnenSeheingeschraenkt,
+    imageAlt: "Projekt für eingeschränkte Menschen in Berlin-Charlottenburg.",
   },
   {
-    id: "team",
+    id: "bezirksamt-harburg",
     step: "03",
-    title: "Team",
+    title: "Bezirksamt Hamburg-Harburg",
     description:
-      "Unter der Geschäftsführung von Tarek Massalme, Philip Rieseberg und Jan-Oliver Kunze arbeiten Architekt:innen, Bauzeichner:innen und weitere Fachkräfte interdisziplinär zusammen.",
-    imageSrc: PEXELS.cottonbro,
-    imageAlt: "Zusammenarbeit im Büro — Entwurf und Abstimmung.",
+      "Das Verwaltungsgebäude am Neugrabener Bahnhof wurde als 7-geschossiges, multifunktionales Haus konzipiert. Ein großzügiges 3-geschossiges Foyer verbindet die zentralen Funktionsbereiche.",
+    imageSrc: PROJECT_IMAGES.bezirksamtHarburg,
+    imageAlt: "Visualisierung Bezirksamt Hamburg-Harburg.",
   },
   {
-    id: "kontakt",
+    id: "aparthotel-marcie",
     step: "04",
-    title: "Kontakt",
+    title: "Aparthotel Marcié",
     description:
-      "Ab dem 1. Februar 2026: Alt-Moabit 103, 10559 Berlin. Tel +49 30 200 59 400 · studio@mars-berlin.com · Bewerbungen: apply@mars-berlin.com (PDF max. 15 MB).",
-    imageSrc: PEXELS.vadutskevich,
-    imageAlt: "Ort und Erreichbarkeit — Gespräch über Ihr Projekt.",
+      "In der Berliner City West organisiert sich das Hotel mit 7 Einheiten pro Regelgeschoss um einen zentralen Mittelflur. Frühstücksraum, Gartenbar und ein unterirdischer Spa-Bereich ergänzen das Konzept.",
+    imageSrc: PROJECT_IMAGES.aparthotelMarcie,
+    imageAlt: "Aparthotel Marcié in Berlin.",
   },
 ];
 
@@ -610,7 +610,7 @@ export function LandingPage() {
                     (hideChrome ? "opacity-0" : "")
                   }
                 >
-                  STUDIO MARS Berlin
+                  Architektur mit Verantwortung in Berlin
                 </h1>
 
                 <figure
@@ -672,7 +672,7 @@ export function LandingPage() {
               id="sticky-services-heading"
               className="mb-[clamp(1rem,2.5vw,1.8rem)] text-left font-sans text-[clamp(0.72rem,1vw,0.9rem)] font-medium uppercase tracking-[0.2em] text-black"
             >
-              Haltung &amp; Schwerpunkte
+              Unsre letzten Projekte
             </h2>
             <div id="sticky-services-list" className="mx-auto flex w-full max-w-[70rem] flex-col gap-[clamp(1.5rem,4vw,3rem)]">
               {STICKY_STORY_STEPS.map((step) => (
@@ -725,7 +725,7 @@ export function LandingPage() {
               id="sticky-services-heading"
               className="px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(1rem,2.5vw,1.8rem)] text-left font-sans text-[clamp(0.72rem,1vw,0.9rem)] font-medium uppercase tracking-[0.2em] text-black"
             >
-              Haltung &amp; Schwerpunkte
+              Unsere letzten Projekte
             </h2>
 
             <div
@@ -902,7 +902,7 @@ export function LandingPage() {
                   <article
                     key={item.id}
                     id={`profil-section-card-${item.id}`}
-                    className="group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:-translate-y-[0.16rem] md:hover:border-black/40 md:hover:bg-[#1f2738] md:hover:shadow-[0_0.95rem_2.1rem_rgba(0,0,0,0.16)]"
+                    className="group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:-translate-y-[0.16rem] md:hover:border-black/40 md:hover:bg-black md:hover:shadow-[0_0.95rem_2.1rem_rgba(0,0,0,0.16)]"
                   >
                     <div className="flex h-full flex-col">
                       <span className="inline-flex items-start justify-start">
@@ -986,7 +986,7 @@ export function LandingPage() {
                         }}
                         id={`profil-section-card-${item.id}`}
                         className={
-                          "group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] shadow-[0_0.8rem_2.1rem_rgba(0,0,0,0.14)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:z-[70] md:hover:-translate-y-[0.2rem] md:hover:overflow-visible md:hover:border-black/40 md:hover:bg-[#1f2738] md:hover:shadow-[0_1rem_2.3rem_rgba(0,0,0,0.2)] " +
+                          "group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] shadow-[0_0.8rem_2.1rem_rgba(0,0,0,0.14)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:z-[70] md:hover:-translate-y-[0.2rem] md:hover:overflow-visible md:hover:border-black/40 md:hover:bg-black md:hover:shadow-[0_1rem_2.3rem_rgba(0,0,0,0.2)] " +
                           (CHARACTERISTICS_GRID_AREA_CLASSES[index] ?? "col-span-1 row-auto md:col-[1/5] md:row-[1/4]") +
                           " " +
                           (CHARACTERISTICS_DESKTOP_CARD_SIZE_CLASSES[index] ?? "h-full w-full")

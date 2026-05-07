@@ -1,0 +1,92 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - 'heading "Zentral- und Landesbibliothek Berlin, Phase I: Ein 1. Preis" [level=2] [ref=e40]'
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - option "Perspektive Perspective" [ref=e47]:
+          - img [ref=e49]
+          - generic [ref=e50]: Perspektive Perspective
+        - option:
+          - generic:
+            - img
+          - generic: Perspektive Perspective
+        - option:
+          - generic:
+            - img
+          - generic: Lageplan Site plan
+        - option:
+          - generic:
+            - img
+          - generic: Schnitte Sections
+        - option:
+          - generic:
+            - img
+          - generic: Ansichten Elevations
+        - option:
+          - generic:
+            - img
+          - generic: Erdgeschoss Ground floor plan
+        - option:
+          - generic:
+            - img
+          - generic: Grundrisse Floor plans
+        - option:
+          - generic:
+            - img
+          - generic: Grundrisse Floor plans
+        - option:
+          - generic:
+            - img
+          - generic: Konzepte Concepts
+        - option:
+          - generic:
+            - img
+          - generic: Diagramme Diagrams
+      - img [ref=e51] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - text: Die neue Zentral- und Landesbibliothek Berlin soll das soziale und kulturelle Zentrum des zukünftigen Stadtquartieres im Randbereich des ehemaligen Flugfeldes des Flughafens Tempelhof bilden. Der Entwurfsansatz zeigt ein Gebäude, das einerseits als urbane Landmarke dient und andererseits hohe Aufenthaltsqualitäten mit einer langfristig funktionierenden, hocheffizienten und an vielfältige Nutzerbedürfnisse anpassbaren räumlichen Organisation verbindet. So ist die Bibliothek als ein einfach begreifbares aber komplexes Gebäude mit einer starken äußeren Form und einer hohen Anzahl an unterschiedlichen Innenräumen konzipiert.
+        - text: Der rechteckige Grundriss wird durch einen Ring aus vertikalen Serviceeinheiten und Erschließungen gegliedert. Dazwischen spannt sich geschossweise ein riesiges Feld auf, das hochflexibel ist und mit unterschiedlichsten Programmen bespielt werden kann. Die großzügig verglaste Fassade bietet beeindruckende Blicke auf die sich weit erstreckende Parkfläche des ehemaligen Flugfeldes.
+      - generic [ref=e56]:
+        - text: Status Gewinner
+        - text: Kategorie Offener Wettbewerb, Phase I
+        - text: Ort Flughafenfeld Tempelhof, Berlin, Deutschland
+        - text: Auftraggeber Senatsverwaltung für Stadtentwicklung und Umwelt
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Tobias Rabold, Marcin Szczodry, Bryony Henson
+        - text: Fläche 91.918m²
+        - text: Budget 270 Mio. Euro
+        - text: Jahr 2013
+        - text: Leistungsphasen Wettbewerb, Phase I
+        - text: Projektbeteiligte TH Treibhaus + LAVALAND (Landschaftsarchitektur), Uberbau (Städtebau), TPG Lehmann (Brandschutz)
+  - generic [ref=e61]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

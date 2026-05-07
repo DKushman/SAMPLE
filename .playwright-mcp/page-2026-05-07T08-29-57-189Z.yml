@@ -1,0 +1,50 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Wohnhaus Boyenstraße in Berlin-Mitte" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - text: Das geplante mehrgeschossige Wohnhaus liegt in räumlicher Nähe zum Erika-Heß-Eisstadion in Berlin-Mitte, östlich des Nordhafens und westlich der Chausseestraße.
+        - text: Das 7-geschossige Gebäude fügt sich harmonisch in die bestehende Blockrandbebauung ein, die durch moderne und architektonisch vielfältige Wohnhäuser geprägt ist. Die Fassaden jeweils zur Straßen- und Hofseite geben durch großzügig ausgebildete Fensterverglasungen den Blick über das Eisstadion und den Nordhafen frei.
+        - text: Die kompakten Wohneinheiten erzeugen ihre großzügige Wirkung durch diesen Außenbezug, deren Raumangebot durch wechselnd angeordnete Balkone und Erker erweitert wird.
+        - text: Das Innere des Gebäudes verfolgt ein Gestaltungskonzept des veredelten Rohbaus, das bewusst auf Putzoberflächen oder Verschalungen verzichtet. Hier prägen Struktur, Rhythmus und Dimension der tragenden Bauteile wie Stützen, Balken und Wände die Wohnräume.
+      - generic [ref=e43]:
+        - text: Status In Planung
+        - text: Kategorie Neubau
+        - text: Ort Berlin-Mitte, Deutschland
+        - text: Auftraggeber Privat
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Ugur Ercan, Patricia Loges, Hsuan Min-Wang
+        - text: Fläche 2.748 m² BGF
+        - text: Jahr 2023-2025
+        - text: Leistungsphasen 1-5
+        - text: Projektbeteiligte MaNidus Ingenieure GmbH, Mörbitz Nordhorn Ingenieure GmbH
+  - generic [ref=e48]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

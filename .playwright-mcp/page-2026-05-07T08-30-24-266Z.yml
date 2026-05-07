@@ -1,0 +1,88 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Wohnen für seheingeschränkte Menschen in Berlin-Charlottenburg" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - generic:
+          - generic:
+            - img
+        - option [ref=e47]:
+          - img [ref=e49]
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - generic:
+          - generic:
+            - img
+      - img [ref=e50] [cursor=pointer]
+    - group [ref=e53]:
+      - generic "Bildübersicht" [ref=e54]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - text: Das Grundstück Prinzregentenstraße 69-70 befindet sich im Berliner Bezirk Charlottenburg- Wilmersdorf. Vor dem 2. Weltkrieg war es im Besitz der Jüdischen Gemeinde von Berlin. Zwischen den Jahren 1928 und 1930 wurde nach den Plänen Beers eine Synagoge in Form eines zentralen Kuppelbaus errichtet. Nach der Machtergreifung der Nationalsozialisten wurde ab 1933 das Leben jüdischer Bürgerinnen und Bürger zunehmend eingeschränkt, die mit den Novemberprogromen von 1938 zur Zerstörung der Synagoge führte.
+        - text: 1955, 10 Jahre nach dem Sieg über Nazi-Deutschland, erreichte die Jewish Trust Corporation unter erheblichen Anstrengungen die Rückerstattung des Grundstücks von der Stadt Berlin. Im Rahmen eines Vertrags wurde dann das Grundstück an die Stadt Berlin übertragen.
+        - text: Die Stadt Berlin überließ nach 1958 das zwischenzeitlich vollständig beräumte Gelände dem Allgemeinen Blindenverein Berlin, der ab 1959 dort ein mehrgeschossiges Wohngebäude mit insgesamt 70 Wohneinheiten für sehbehinderte Menschen errichten ließ.
+        - text: Eine am 9. November 1988 enthüllte Gedenktafel erinnert an die ehemalige Synagoge Prinzregentenstraße.
+        - text: Das geplante Wohnhaus wird in 2. Reihe hinter dem 1959 fertiggestellten Wohnhaus errichtet. Hinsichtlich der Höhe und Geschosszahl orientiert sich das neue Wohnhaus an der vorhandenen Bebauung. Es umfasst insgesamt 48 Wohnungen mit einem integrierten Gemeinschaftsraum und einem Fahrradraum, der im Untergeschoss angeordnet wird. Der kompakte Baukörper mit einem doppelgeschossigen Staffelgeschoss verläuft in seiner Längsachse von Norden nach Süden. Die Wohnungen sind entsprechend nach Osten und Westen ausgerichtet. Der zentrale Mittelgang erschließt in der Regel 8 Wohneinheiten je Geschoss. Der Zugang erfolgt über einen nach Nord-Westen ausgerichteten Haupteingang, der über den Mittelgang an die beiden notwendigen Treppenhäuser und die zentrale Aufzugsanlage angebunden ist.
+        - text: Die Bezüge zur jüdischen Synagoge sollen durch einen Erinnerungspfad im Außenbereich des Baugrundstücks hergestellt werden.
+        - text: Auch formale Bezüge zur ehemaligen Synagoge werden in der vorhandenen Freiraumplanung hinsichtlich der Wegeführung in das neue Freianlagenkonzept integriert.
+        - text: Im Rahmen der Berliner Förderkulisse entstehen mietpreisgebundene Wohnungen. Die Anforderungen an die Gestaltungsvorgaben von seheingeschränkten Menschen werden bei der Planung berücksichtigt. Das geplante Gebäude erfüllt darüber hinaus die Vorgaben „klimafreundliches Wohngebäude - mit QNG (QNG PLUS)“. Der Hofgarten erfüllt die Anforderungen an Biodiversität und naturnahem Grün über die Erfüllung der Vorgaben aus dem festgesetzten Landschaftsplan.
+      - generic [ref=e57]:
+        - text: Status Planung abgeschlossen
+        - text: Kategorie Neubau
+        - text: Ort Berlin, Deutschland
+        - text: Auftraggeber ABSV – Allgemeiner Blinden- und
+        - text: Sehbehindertenverein Berlin
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten)
+        - text: Team Alexander Regnault, Ugur Ercan, Said Tasabhji, Paul Springborn
+        - text: Fläche 4410 m² BGF
+        - text: Jahr 2024-2025
+        - text: Phasen 1-3
+        - text: Projektbeteiligte friedburg & hhvh
+        - text: (Landschaftsarchitektur), VAU - Gerit Veckenstedt (Brandschutz), Planungsbüro Dernbach GmbH (TGA), LOSSEN INGENIEURE GmbH (Tragwerk),AKUT Umweltschutz Ingenieure (Entwässerung)
+  - generic [ref=e62]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

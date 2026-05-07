@@ -113,7 +113,7 @@ export function SiteFooterReveal() {
     <footer
       ref={footerRef}
       id="site-footer-reveal"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-0 rounded-tl-[clamp(1rem,2.2vw,1.8rem)] rounded-tr-[clamp(1rem,2.2vw,1.8rem)] bg-[#273149] text-white will-change-transform"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-0 rounded-tl-[clamp(1rem,2.2vw,1.8rem)] rounded-tr-[clamp(1rem,2.2vw,1.8rem)] bg-[#000000] text-white will-change-transform"
       aria-label="Site footer"
       style={{ transform: "translate3d(0, 64px, 0)" }}
     >
@@ -218,12 +218,14 @@ export function SiteFooterReveal() {
           id="site-footer-brand"
           className="mt-[clamp(1rem,2.3vw,1.8rem)] border-t border-white/10 pt-[clamp(1rem,2.3vw,1.8rem)]"
         >
-          <p className="font-sans text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold uppercase tracking-[0.08em] text-white/95">
-            STUDIO MARS Berlin
-          </p>
-          <p className="mt-2 max-w-[48ch] font-sans text-[clamp(0.7rem,0.95vw,0.82rem)] leading-[1.4] text-white/55">
-            vormals MARS Gesellschaft von Architekten mbH · Amtsgericht Charlottenburg HRB189780
-          </p>
+          <img
+            src="/STUDIO.MARS.png"
+            alt="STUDIO.MARS"
+            className="block h-auto w-full"
+            loading="lazy"
+            decoding="async"
+          />
+
         </div>
       </div>
     </footer>

@@ -18,8 +18,8 @@ export function PillArrowButton({
   tone = "dark",
 }: PillArrowButtonProps) {
   const isLight = tone === "light";
-  const surfaceClass = isLight ? "bg-white" : "bg-[#273149]";
-  const textClass = isLight ? "text-[#273149]" : "text-white";
+  const surfaceClass = isLight ? "bg-white" : "bg-[#000000]";
+  const textClass = isLight ? "text-[#000000]" : "text-white";
 
   return (
     <Link

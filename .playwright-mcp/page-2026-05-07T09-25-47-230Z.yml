@@ -1,0 +1,117 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - text: Philip Rieseberg
+          - text: Dipl.-Ing. Architekt
+          - text: Geschäftsführer
+        - img [ref=e46]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - text: Simon Schlinkmann
+          - text: Dipl.-Ing. Architekt
+        - img [ref=e51]
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - text: Said Tasabhji
+          - text: Bauzeichner Architektur
+        - img [ref=e56]
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - text: Luis Schrewe
+          - text: Architekt (AAM)
+        - img [ref=e61]
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - text: Jan-Oliver Kunze
+          - text: Dipl.-Ing. Architekt
+          - text: Geschäftsführer
+        - img [ref=e67]
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - text: Hsuan-Min Wang
+          - text: Dipl.-Ing. Architektin
+        - img [ref=e72]
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - text: Alexander Grahms
+          - text: M.Sc. Architektur
+        - img [ref=e77]
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - text: Paul Springborn
+          - text: B.Sc. Architektur
+        - img [ref=e82]
+    - generic [ref=e83]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - text: Tarek Massalme
+          - text: Dipl.-Ing. Architekt
+          - text: Geschäftsführer
+        - img [ref=e88]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - text: Matouš Koudelka
+          - text: M.Sc. Architektur
+        - img [ref=e93]
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - text: Alvin Simon
+          - text: M.A. Architektur
+        - img [ref=e98]
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - text: Kseniia Kovtun
+          - text: Bauzeichnerin Architektur (1. Lehrjahr)
+        - img [ref=e103]
+    - generic [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - text: Olena Glotova
+          - text: Architect
+        - img [ref=e109]
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - text: Marian Jobke
+          - text: M.Sc. Architektur
+        - img [ref=e114]
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - text: Lara Jahn
+          - text: cand. Arch.
+        - img [ref=e119]
+      - generic [ref=e121]:
+        - generic [ref=e122]: Florian Maaß
+        - img [ref=e124]
+  - generic [ref=e129]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

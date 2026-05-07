@@ -1,0 +1,90 @@
+- generic [ref=e2]:
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e11] [cursor=pointer]:
+        - /url: HOME
+        - img [ref=e12]
+      - navigation [ref=e13]:
+        - listitem [ref=e14]:
+          - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+            - /url: Home
+        - listitem [ref=e17]:
+          - link "PROFIL" [ref=e19] [cursor=pointer]:
+            - /url: PROFIL
+        - listitem [ref=e20]:
+          - link "TEAM" [ref=e22] [cursor=pointer]:
+            - /url: TEAM
+        - listitem [ref=e23]:
+          - link "KONTAKT" [ref=e25] [cursor=pointer]:
+            - /url: KONTAKT
+        - listitem [ref=e26]:
+          - link "︎" [ref=e28] [cursor=pointer]:
+            - /url: https://www.instagram.com/studiomarsberlin/
+        - listitem [ref=e29]:
+          - link "︎" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/studio-mars-berlin
+  - generic [ref=e39]:
+    - heading "Rathaus der Zukunft" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - img [ref=e42] [cursor=pointer]
+      - listbox [ref=e46]:
+        - generic:
+          - generic:
+            - img
+        - option [ref=e47]:
+          - img [ref=e49]
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - option:
+          - generic:
+            - img
+        - generic:
+          - generic:
+            - img
+      - img [ref=e50] [cursor=pointer]
+    - group [ref=e53]:
+      - generic "Bildübersicht" [ref=e54]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - text: Ort der Begegnung – Palast der Demokratie
+        - text: Das Rathaus der Zukunft ist ein Ort der Begegnung. Seine offene Struktur führt die Öffentlichkeit durch das Gebäude vom Erdgeschoss bis an seine Spitze. Das Rathaus erweitert den öffentlichen Raum in der Vertikalen und schafft ein neues Wohnzimmer und einen vertikalen Park für die Einwohner des Bezirks. Die Begegnung mit der Verwaltung findet auf offenen Plattformen statt. Die Verwaltung der Zukunft ist digital oder transparent, persönlich und direkt.
+        - text: Das Rathaus der Zukunft ist ein sicherer Schutzraum, ein Grünraum, ein Erholungsraum, ein Ort der Anstöße und ein Ort der demokratischen Traditionen.
+        - text: Das Rathaus der Zukunft ist ein Palast der Demokratie. Der Plenarsaal der Bezirksverordnetenversammlung ist das Herz des Gebäudes. Das durchgehende Atrium ermöglicht der Öffentlichkeit jederzeit den Einblick auf das Handeln der gewählten Volksvertretung sowie in die Arbeit der Verwaltung.
+      - generic [ref=e57]:
+        - text: Status Abgeschlossen
+        - text: Kategorie Offener Wettbewerb
+        - text: Ort Berlin - Mitte, Deutschland
+        - text: Auftraggeber Land Berlin vertreten durch die
+        - text: Senatsverwaltung für Stadtentwicklung, Bauen und
+        - text: Wohnen
+        - text: Entwurf STUDIO MARS Berlin (MARS Architekten) mit Kirchberger & Wiegner Rohde
+        - text: Team M. Kasaiean, S. Kirchberger, K. Kovtun, J.-O. Kunze, T. Massalme, F. Rohde, M Salimipoor, P. Springborn, S. Tasabhji, A. Wiegner, L. Woebcken-Fraser
+        - text: Fläche 32.720 m² BGF
+        - text: Budget 114 Mio. Euro
+        - text: Jahr 2024
+        - text: Projektbeteiligte Locodrom Landschaftsarchitekten (Landschaftsarchitektur), LOSSEN INGENIEURE GmbH (Tragwerk), Büro Happold GmbH (TGA)
+  - generic [ref=e62]:
+    - generic:
+      - link:
+        - /url: KONTAKT
+      - link:
+        - /url: Privacy-Policy

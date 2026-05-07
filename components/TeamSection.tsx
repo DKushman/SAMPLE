@@ -13,49 +13,42 @@ type TeamMember = {
   imageSrc: string;
 };
 
-/** Namen und Rollen nach mars-berlin.com/TEAM — Porträts Platzhalter (Pexels). */
+/** Erste fünf Teammitglieder inkl. Portraits von mars-berlin.com/TEAM. */
 const TEAM_MEMBERS: TeamMember[] = [
-  {
-    id: "tarek-massalme",
-    name: "Tarek Massalme",
-    role: "Dipl.-Ing. Architekt · Geschäftsführer",
-    imageSrc:
-      "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
   {
     id: "philip-rieseberg",
     name: "Philip Rieseberg",
     role: "Dipl.-Ing. Architekt · Geschäftsführer",
     imageSrc:
-      "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: "jan-oliver-kunze",
-    name: "Jan-Oliver Kunze",
-    role: "Dipl.-Ing. Architekt · Geschäftsführer",
-    imageSrc:
-      "https://images.pexels.com/photos/3785078/pexels-photo-3785078.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://freight.cargo.site/w/400/q/75/i/3967bfc7c237acc67c08523e815fed04a3700952593b59c991691d52a927e53b/OFX-X-MARS-230131-jk-portrait-3245.jpg",
   },
   {
     id: "simon-schlinkmann",
     name: "Simon Schlinkmann",
     role: "Dipl.-Ing. Architekt",
     imageSrc:
-      "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://freight.cargo.site/w/400/q/75/i/50ff40dd8068ec6830b7749cca59a9928074479eb03aa5023e73ff220fb742f8/OFX-X-MARS-230131-jk-portrait-3180.jpg",
   },
   {
-    id: "hsuan-min-wang",
-    name: "Hsuan-Min Wang",
-    role: "Dipl.-Ing. Architektin",
+    id: "said-tasabhji",
+    name: "Said Tasabhji",
+    role: "Bauzeichner Architektur",
     imageSrc:
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://freight.cargo.site/w/400/q/75/i/28bfacb418541db8406784fd84ebde651a70d2e4bce010ed07c3b601814807b2/OFX-X-MARS-240305-st-portrait-5672.jpg",
   },
   {
-    id: "alexander-grahms",
-    name: "Alexander Grahms",
-    role: "M.Sc. Architektur",
+    id: "luis-schrewe",
+    name: "Luis Schrewe",
+    role: "Architekt (AAM)",
     imageSrc:
-      "https://images.pexels.com/photos/3789108/pexels-photo-3789108.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://freight.cargo.site/w/400/q/75/i/9a7c34bad0cdcb78bdf4c1032ddcef8b205df6a5356e1a9a19b658865bf0806a/OFX-X-MARS-240305-ls-portrait-5637.jpg",
+  },
+  {
+    id: "jan-oliver-kunze",
+    name: "Jan-Oliver Kunze",
+    role: "Dipl.-Ing. Architekt · Geschäftsführer",
+    imageSrc:
+      "https://freight.cargo.site/w/400/q/75/i/df9a47459aa746c1aeb49b8ea950389148ee7fef03b1eaa58dc852ce9a1a746f/OFX-X-MARS-230130-jk-portrait-3053.jpg",
   },
 ];
 
@@ -184,12 +177,22 @@ export function TeamSection() {
         </div>
       </div>
 
-      <div
-        ref={scrollerRef}
-        id="team-section-scroller"
-        className="mt-[clamp(1.1rem,2.8vw,2.2rem)] flex w-full snap-x snap-mandatory gap-[clamp(0.8rem,2vw,1.4rem)] overflow-x-auto px-[clamp(1.4rem,5.2vw,3.2rem)] pb-[clamp(0.2rem,0.8vw,0.4rem)] [scroll-padding-inline:clamp(1.4rem,5.2vw,3.2rem)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {TEAM_MEMBERS.map((member, index) => (
+      <div className="relative mt-[clamp(1.1rem,2.8vw,2.2rem)]">
+        <a
+          id="team-section-see-all"
+          href="https://mars-berlin.com/TEAM"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute left-[clamp(1.4rem,5.2vw,3.2rem)] top-0 z-10 inline-block pb-1 font-sans text-xs font-normal text-black no-underline transition-opacity after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:scale-x-0 after:bg-black after:transition-transform after:duration-300 after:ease-out motion-reduce:after:transition-none hover:opacity-70 hover:after:scale-x-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black focus-visible:after:scale-x-100"
+        >
+          Alle sehen
+        </a>
+        <div
+          ref={scrollerRef}
+          id="team-section-scroller"
+          className="flex w-full snap-x snap-mandatory gap-[clamp(0.8rem,2vw,1.4rem)] overflow-x-auto px-[clamp(1.4rem,5.2vw,3.2rem)] pb-[clamp(0.2rem,0.8vw,0.4rem)] pt-[clamp(1.5rem,2.8vw,2rem)] [scroll-padding-inline:clamp(1.4rem,5.2vw,3.2rem)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {TEAM_MEMBERS.map((member, index) => (
           <article
             key={member.id}
             ref={(node) => {
@@ -259,7 +262,8 @@ export function TeamSection() {
               </div>
             </div>
           </article>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
