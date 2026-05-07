@@ -23,11 +23,18 @@ const TEAM_MEMBERS: TeamMember[] = [
       "https://freight.cargo.site/w/400/q/75/i/3967bfc7c237acc67c08523e815fed04a3700952593b59c991691d52a927e53b/OFX-X-MARS-230131-jk-portrait-3245.jpg",
   },
   {
-    id: "simon-schlinkmann",
-    name: "Simon Schlinkmann",
-    role: "Dipl.-Ing. Architekt",
+    id: "tarek-massalme",
+    name: "Tarek Massalme",
+    role: "Dipl.-Ing. Architekt - Geschäftsführer",
     imageSrc:
-      "https://freight.cargo.site/w/400/q/75/i/50ff40dd8068ec6830b7749cca59a9928074479eb03aa5023e73ff220fb742f8/OFX-X-MARS-230131-jk-portrait-3180.jpg",
+      "https://freight.cargo.site/w/500/q/75/i/4f175223d6018fdbc240be649f3a8c9ac59370797f2ea0551340d221f8efe2c6/OFX-X-MARS-230202-jk-portrait-3401.jpg",
+  },
+  {
+    id: "jan-oliver-kunze",
+    name: "Jan-Oliver Kunze",
+    role: "Dipl.-Ing. Architekt · Geschäftsführer",
+    imageSrc:
+      "https://freight.cargo.site/w/400/q/75/i/df9a47459aa746c1aeb49b8ea950389148ee7fef03b1eaa58dc852ce9a1a746f/OFX-X-MARS-230130-jk-portrait-3053.jpg",
   },
   {
     id: "said-tasabhji",
@@ -43,13 +50,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     imageSrc:
       "https://freight.cargo.site/w/400/q/75/i/9a7c34bad0cdcb78bdf4c1032ddcef8b205df6a5356e1a9a19b658865bf0806a/OFX-X-MARS-240305-ls-portrait-5637.jpg",
   },
-  {
-    id: "jan-oliver-kunze",
-    name: "Jan-Oliver Kunze",
-    role: "Dipl.-Ing. Architekt · Geschäftsführer",
-    imageSrc:
-      "https://freight.cargo.site/w/400/q/75/i/df9a47459aa746c1aeb49b8ea950389148ee7fef03b1eaa58dc852ce9a1a746f/OFX-X-MARS-230130-jk-portrait-3053.jpg",
-  },
+
 ];
 
 export function TeamSection() {

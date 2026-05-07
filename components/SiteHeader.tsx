@@ -302,7 +302,7 @@ export function SiteHeader({
         {/* Blue panel slides up */}
         <div
           ref={panelRef}
-          className={`absolute inset-0 flex flex-col bg-[#1a2744] text-white shadow-[0_-1rem_3rem_rgba(0,0,0,0.25)] ${
+          className={`absolute inset-0 flex flex-col bg-[#000000] text-white shadow-[0_-1rem_3rem_rgba(0,0,0,0.25)] ${
             reducedMotion
               ? `transition-transform duration-300 ease-out ${
                   menuOpen ? "translate-y-0" : "translate-y-full"
@@ -341,7 +341,7 @@ export function SiteHeader({
               </p>
               <ul
                 className={
-                  "flex w-full max-w-4xl flex-col items-center gap-7 px-2 text-center " +
+                  "flex w-full max-w-4xl flex-col items-center px-2 text-center " +
                   "font-sans font-medium uppercase leading-none tracking-normal " +
                   "text-[clamp(1.6rem,5.5vw,3.125rem)] [font-variant-ligatures:none]"
                 }
