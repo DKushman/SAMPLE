@@ -19,20 +19,20 @@ import { SiteFooterReveal } from "@/components/SiteFooterReveal";
 import { ContactCtaSection } from "@/components/ContactCtaSection";
 import { PillArrowButton } from "@/components/PillArrowButton";
 
-/** Sticky cards: Inhalte/Bilder aus ausgewählten Projektseiten von mars-berlin.com. */
+/** Sticky cards: Inhalte/Bilder aus ausgewählten Projektseiten von bauwerke.org. */
 const PROJECT_IMAGES = {
-  wohnhausBoyen:
-    "https://freight.cargo.site/t/original/i/1dfaff1d4596fc9cfc545bc57ed02a8203e36d4000f3c796d90128e48bb4d451/BOY-X-MARS-Wohnungsbau-Visualisierung_Champagner_reduced.jpg",
-  wohnenSeheingeschraenkt:
-    "https://freight.cargo.site/t/original/i/58da05eaf213de1799c6dc2808f631a8c81c473287fcd4e0366288de85e9780e/PRS-0-MARS-ABSV_Visu_05_Eingangsbereich_reduced.jpg",
-  bezirksamtHarburg:
-    "https://freight.cargo.site/t/original/i/ec954cec70f10a2ffc739dd1ce386c773c99f95946ffe86585b56e9fc2e393ed/VBN-X-LAN-MARS-Bezirksamt-Hamburg-Harburg_Neugrabener_Bahnhof-aussen.jpg",
-  aparthotelMarcie:
-    "https://freight.cargo.site/t/original/i/7cc2a4874f82a87bc21b9bfc42e008b0dbb359b77b1e7cd49ddde22285cd23d3/AHC-X-MARS-Aparthotel_Marcie-courtyard_day_24.jpg",
+  amazonEntwicklungszentrumBerlin:
+    "https://bauwerke.org/wp-content/uploads/2022/10/Amazon_3576.jpg",
+  verticalVillageApartmentsLeipzig:
+    "https://bauwerke.org/wp-content/uploads/2022/11/Bild01.jpg",
+  landesvertretungBayernBerlin:
+    "https://bauwerke.org/wp-content/uploads/2022/11/IMG_5760-scaled-1.jpg",
+  wohnhausImGruenenBerlin:
+    "https://bauwerke.org/wp-content/uploads/2022/11/Bild04-3.jpg",
 } as const;
 
-/** Hero: lokales Referenzmotiv (Studio Mars). */
-const HERO_IMAGE_SRC = publicAssetPath("/studio-mars1.jpg");
+/** Hero: BauWerke Referenzmotiv. */
+const HERO_IMAGE_SRC = publicAssetPath("/bauwerke-hero.jpg");
 /** Alias — gleiche URL wie `HERO_IMAGE_SRC` (<picture>/<source>). */
 const MOBILE_HERO_SRC = HERO_IMAGE_SRC;
 
@@ -67,43 +67,43 @@ type ProfilPillar = {
   iconPaths: string[];
 };
 
-/** Projekt-Highlights aus vier konkreten mars-berlin.com Projektseiten. */
+/** Projekt-Highlights aus vier konkreten bauwerke.org Projektseiten. */
 const STICKY_STORY_STEPS: StickyStoryStep[] = [
   {
-    id: "wohnhaus-boyen",
+    id: "amazon-entwicklungszentrum-berlin",
     step: "01",
-    title: "Wohnhaus Boyenstraße in Berlin-Mitte",
+    title: "Amazon Entwicklungszentrum Berlin",
     description:
-      "Das 7-geschossige Gebäude fügt sich harmonisch in die bestehende Blockrandbebauung ein. Großzügige Verglasungen zur Straßen- und Hofseite öffnen den Blick über Eisstadion und Nordhafen.",
-    imageSrc: PROJECT_IMAGES.wohnhausBoyen,
-    imageAlt: "Wohnhaus Boyenstraße in Berlin-Mitte.",
+      "BauWerke stellte in Kooperation mit HOK London den mieterspezifischen Innenausbau des denkmalgeschützten ehemaligen Kaufhaus Hertzog fertig.",
+    imageSrc: PROJECT_IMAGES.amazonEntwicklungszentrumBerlin,
+    imageAlt: "Amazon Entwicklungszentrum Berlin.",
   },
   {
-    id: "wohnen-seheingeschraenkt",
+    id: "vertical-village-apartments-leipzig",
     step: "02",
-    title: "Wohnen für seheingeschränkte Menschen",
+    title: "Vertical Village Apartments Leipzig",
     description:
-      "In Berlin-Charlottenburg entstehen 48 Wohnungen mit Gemeinschaftsraum und Fahrradraum. Das Konzept verbindet geförderten Wohnraum, Anforderungen für sehbehinderte Menschen und klimafreundliches Bauen.",
-    imageSrc: PROJECT_IMAGES.wohnenSeheingeschraenkt,
-    imageAlt: "Projekt für eingeschränkte Menschen in Berlin-Charlottenburg.",
+      "In Leipzig entsteht ein innovatives Nutzungskonzept mit Vertical Village Apartments und Community-Flächen im umgebauten Technischen Rathaus.",
+    imageSrc: PROJECT_IMAGES.verticalVillageApartmentsLeipzig,
+    imageAlt: "Vertical Village Apartments Leipzig.",
   },
   {
-    id: "bezirksamt-harburg",
+    id: "landesvertretung-bayern-berlin",
     step: "03",
-    title: "Bezirksamt Hamburg-Harburg",
+    title: "Landesvertretung Bayern, Berlin",
     description:
-      "Das Verwaltungsgebäude am Neugrabener Bahnhof wurde als 7-geschossiges, multifunktionales Haus konzipiert. Ein großzügiges 3-geschossiges Foyer verbindet die zentralen Funktionsbereiche.",
-    imageSrc: PROJECT_IMAGES.bezirksamtHarburg,
-    imageAlt: "Visualisierung Bezirksamt Hamburg-Harburg.",
+      "BauWerke gestaltete Besprechungs-, Konferenz- und Versammlungsräume sowie ausgewählte Büros für die Bayerische Landesvertretung neu.",
+    imageSrc: PROJECT_IMAGES.landesvertretungBayernBerlin,
+    imageAlt: "Landesvertretung Bayern, Berlin.",
   },
   {
-    id: "aparthotel-marcie",
+    id: "wohnhaus-im-gruenen-berlin",
     step: "04",
-    title: "Aparthotel Marcié",
+    title: "Wohnhaus im Grünen, Berlin",
     description:
-      "In der Berliner City West organisiert sich das Hotel mit 7 Einheiten pro Regelgeschoss um einen zentralen Mittelflur. Frühstücksraum, Gartenbar und ein unterirdischer Spa-Bereich ergänzen das Konzept.",
-    imageSrc: PROJECT_IMAGES.aparthotelMarcie,
-    imageAlt: "Aparthotel Marcié in Berlin.",
+      "Neubau eines Einfamilienwohnhauses mit den Leistungen Entwurf, Planung und Bauüberwachung.",
+    imageSrc: PROJECT_IMAGES.wohnhausImGruenenBerlin,
+    imageAlt: "Wohnhaus im Grünen, Berlin.",
   },
 ];
 
@@ -610,7 +610,7 @@ export function LandingPage() {
                     (hideChrome ? "opacity-0" : "")
                   }
                 >
-                  Architektur mit Verantwortung in Berlin
+                  Architektur und Stadtplanung in Berlin
                 </h1>
 
                 <figure
@@ -656,9 +656,7 @@ export function LandingPage() {
             id="hero-section-copy"
             className="split ml-auto px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(1rem,2.5vw,1.75rem)] pt-[clamp(1.5rem,4vw,3rem)] lg:pt-[clamp(3.5rem,7vw,6rem)] max-w-[30ch] text-left font-sans text-[clamp(1.5rem,3.4vw,3.3rem)] leading-[1.08] tracking-tight text-black"
           >
-            STUDIO MARS Berlin wurde im Jahr 2008 von den Architekten Tarek
-            Massalme, Philip Rieseberg und Jan-Oliver Kunze unter dem Namen MARS
-            Architekten in Berlin gegründet.
+            BauWerke bildet eine Plattform, auf der sich Kreativität und Innovation mit fundiertem Fachwissen aus unterschiedlichen, sich ergänzenden Bereichen zusammenfinden, gegenseitig befruchten und neue Qualitäten in der Konzeption, Planung und Betreuung von Bauwerken erschließen.
           </p>
         </section>
 
@@ -889,7 +887,7 @@ export function LandingPage() {
                 id="profil-section-intro"
                 className="mx-auto mt-[clamp(0.8rem,2vw,1.4rem)] max-w-[62ch] font-sans text-[clamp(0.95rem,1.5vw,1.12rem)] leading-[1.45] text-black/80"
               >
-                Neben der architektonischen Planung sind wir als Sachverständige für Bauschäden, Energieberater und im Bereich Design tätig — immer mit Blick auf eine ästhetische und gesellschaftlich tragfähige Architektur.
+                Als Verbund aus Architekten, Ingenieuren, Stadtplanern und Designern sind wir professioneller Partner für Architektur, Generalplanung und Projektmanagement.
               </p>
             </header>
 
@@ -969,8 +967,8 @@ export function LandingPage() {
                     id="profil-section-intro"
                     className="mx-auto mt-[clamp(0.8rem,2vw,1.4rem)] max-w-[62ch] font-sans text-[clamp(0.95rem,1.5vw,1.12rem)] leading-[1.45] text-black/80"
                   >
-                    Neben der architektonischen Planung sind wir als Sachverständige für Bauschäden, Energieberater und im Bereich Design tätig — immer mit Blick auf eine ästhetische und gesellschaftlich tragfähige Architektur.
-                  </p>
+                Als Verbund aus Architekten, Ingenieuren, Stadtplanern und Designern sind wir professioneller Partner für Architektur, Generalplanung und Projektmanagement.
+                </p>
                 </header>
 
                 <div

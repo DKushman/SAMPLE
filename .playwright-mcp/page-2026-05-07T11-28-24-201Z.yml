@@ -1,0 +1,135 @@
+- generic [active] [ref=e1]:
+  - link "Zum Inhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "BauWerke_Firmenlogo_Untertext_700" [ref=e14] [cursor=pointer]:
+        - /url: https://bauwerke.org/de/start/
+        - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e15]
+      - text:    
+      - banner [ref=e16]:
+        - navigation "Deutsch_mobil" [ref=e20]:
+          - button "Toggle Navigation  " [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: Toggle Navigation
+              - generic [ref=e24]:
+                - generic [ref=e25]: 
+                - generic [ref=e26]: 
+          - list:
+            - listitem:
+              - link "Profil":
+                - /url: https://bauwerke.org/de/profil/
+                - generic: Profil
+                - text: 
+              - button "Open submenu of Profil": 
+            - listitem:
+              - link "Blog":
+                - /url: https://bauwerke.org/de/blog/
+                - generic: Blog
+            - listitem:
+              - link "Projekte":
+                - /url: https://bauwerke.org/de/projekte-der-bauwerke-gmbh/
+                - generic: Projekte
+            - listitem:
+              - link "Kunden":
+                - /url: https://bauwerke.org/de/nationale-und-internationale-kunden-der-bauwerke-gmbh/
+                - generic: Kunden
+            - listitem:
+              - link "Kontakt":
+                - /url: "#kontakt"
+                - generic: Kontakt
+            - listitem:
+              - link "English":
+                - /url: https://bauwerke.org/en/bauwerke-gmbh-english/
+                - generic: English
+    - main [ref=e27]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - img "Amazon_3576" [ref=e38]
+          - generic [ref=e40]:
+            - img "Amazon Entwicklungszentrum Berlin" [ref=e43]
+            - img "Amazon Entwicklungszentrum Berlin" [ref=e46]
+        - generic [ref=e50]:
+          - heading "Amazon Entwicklungszentrum Berlin" [level=1] [ref=e52]
+          - generic [ref=e53]:
+            - paragraph [ref=e54]: BauWerke stellte, in Kooperation mit HOK London, den mieterspezifischen Innenausbau des denkmalgeschützten ehemaligen Kaufhaus Hertzog fertig.
+            - paragraph [ref=e55]: Auf einer gewerblichen Mietfläche von 7.350 Quadratmetern wurden offene Bürogrundrisse realisiert, die sich in den historischen Charakter des Einzeldenkmals einfügen.
+            - paragraph [ref=e56]: "Rendering: bloomimages, Berlin"
+            - paragraph [ref=e57]: "Fotos: Dr. Reinhard Kietzmann, Berlin"
+          - generic [ref=e59]:
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e62] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild02-3.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e63]
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e66] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild04-4.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e67]
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e70] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild05-4.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e71]
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e74] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild07.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e75]
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e78] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild03-4.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e79]
+            - link "Amazon Entwicklungszentrum Berlin" [ref=e82] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild01-7.jpg
+              - img "Amazon Entwicklungszentrum Berlin" [ref=e83]
+        - generic [ref=e86]:
+          - heading "KONTAKT" [level=2] [ref=e90]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - text: Aus datenschutzrechtlichen Gründen benötigt Google Maps Ihre Einwilligung um geladen zu werden. Mehr Informationen finden Sie unter
+              - link "Datenschutzerklärung" [ref=e97] [cursor=pointer]:
+                - /url: https://bauwerke.org/de/datenschutzerklaerung/
+              - text: .
+            - button "Akzeptieren" [ref=e98] [cursor=pointer]
+          - generic [ref=e100]:
+            - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e103]
+            - generic [ref=e104]:
+              - paragraph [ref=e105]: Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+              - paragraph [ref=e106]: Sophie-Charlotten-Str. 92-94 | 14059 Berlin | Deutschland
+              - paragraph [ref=e107]: "Telefon: +49 (0)30 300 96 70"
+              - paragraph [ref=e108]: "E-Mail: info@bauwerke.org"
+              - paragraph [ref=e109]: "Presse- / Öffentlichkeitsarbeit: presse@bauwerke.org"
+              - generic [ref=e112]:
+                - link "facebook" [ref=e113] [cursor=pointer]:
+                  - /url: https://www.facebook.com/BueroBauWerke/
+                  - text: 
+                - link "instagram" [ref=e114] [cursor=pointer]:
+                  - /url: https://www.instagram.com/buerobauwerke/
+                  - text: 
+                - link "linkedin" [ref=e115] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/bauwerke/
+                  - text: 
+            - link "Kontaktdaten der BauWerke GmbH" [ref=e117] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2023/01/BauWerke-GmbH.vcf
+              - generic [ref=e118]: Download Visitenkarte (vcf)
+    - generic [ref=e119]:
+      - contentinfo [ref=e120]:
+        - paragraph [ref=e127]:
+          - link "Datenschutzerklärung" [ref=e128] [cursor=pointer]:
+            - /url: https://bauwerke.org/datenschutzerklaerung/
+          - link "Impressum" [ref=e129] [cursor=pointer]:
+            - /url: https://bauwerke.org/impressum/
+      - contentinfo [ref=e131]:
+        - generic [ref=e133]:
+          - generic [ref=e135]: © Copyright 2026 | BauWerke Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+          - generic [ref=e138]:
+            - link " Facebook" [ref=e139] [cursor=pointer]:
+              - /url: https://www.facebook.com/BueroBauWerke
+              - text: 
+              - generic [ref=e140]: Facebook
+            - link " Instagram" [ref=e141] [cursor=pointer]:
+              - /url: https://www.instagram.com/buerobauwerke
+              - text: 
+              - generic [ref=e142]: Instagram
+            - link " LinkedIn" [ref=e143] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/bauwerke/
+              - text: 
+              - generic [ref=e144]: LinkedIn
+  - region "Nach oben":
+    - link " Nach oben":
+      - /url: "#"
+      - text: 
+      - generic: Nach oben

@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 /** Aligns with tokens/motion.tokens.json stagger.heroLines (100ms) */
 const HERO_STAGGER_S = 0.1;
 
-const headline = "ROOMS THAT REMEMBER YOU";
+const headline = "ARCHITEKTEN UND GENERALPLANER";
 
 function LogoMark() {
   return (
@@ -122,7 +122,7 @@ export default function StudioHero() {
           <div className="nav-reveal flex items-center gap-3">
             <LogoMark />
             <span className="font-sans text-sm font-medium tracking-wide text-white">
-              Studio DADO
+              BauWerke
             </span>
           </div>
 
@@ -132,18 +132,18 @@ export default function StudioHero() {
           >
             <ul className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-8">
               <li>
-                <NavLink href="#projects">Projects</NavLink>
+                <NavLink href="#profil">Profil</NavLink>
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-white/50" aria-hidden="true">
                   •
                 </span>
                 <Link
-                  href="#approach"
+                  href="#blog"
                   className="nav-reveal group relative inline-block py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-white focus-visible:text-white"
                   aria-current="page"
                 >
-                  <span className="relative z-10">Approach</span>
+                  <span className="relative z-10">Blog</span>
                   <span
                     className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/90"
                     aria-hidden="true"
@@ -151,7 +151,7 @@ export default function StudioHero() {
                 </Link>
               </li>
               <li>
-                <NavLink href="#about">About Us</NavLink>
+                <NavLink href="#projekte">Projekte</NavLink>
               </li>
             </ul>
           </nav>
@@ -162,13 +162,13 @@ export default function StudioHero() {
           >
             <ul className="flex flex-col gap-2 sm:items-end">
               <li>
-                <NavLink href="#news">News</NavLink>
+                <NavLink href="#kunden">Kunden</NavLink>
               </li>
               <li>
-                <NavLink href="#blog">Blog</NavLink>
+                <NavLink href="#kontakt">Kontakt</NavLink>
               </li>
               <li>
-                <NavLink href="#contact">Contact</NavLink>
+                <NavLink href="#english">English</NavLink>
               </li>
             </ul>
           </nav>
@@ -176,24 +176,24 @@ export default function StudioHero() {
 
         <div className="mt-auto grid flex-1 grid-cols-1 gap-10 pt-16 sm:grid-cols-12 sm:items-end sm:gap-6 sm:pt-24">
           <p className="hero-reveal font-sans text-[11px] font-medium uppercase leading-relaxed tracking-[0.25em] text-white/80 sm:col-span-3">
-            Interior design
+            Architektur
             <br />
-            for hospitality
+            Generalplanung
           </p>
 
           <div className="hero-reveal sm:col-span-5 sm:col-start-5">
             <p className="mb-2 font-sans text-[10px] uppercase tracking-[0.35em] text-white/55">
-              About
+              Profil
             </p>
             <p className="max-w-md font-sans text-sm leading-relaxed text-white/90 sm:text-base">
-              We create innovative and thought-provoking environments that foster
-              deeper human experiences.
+              BauWerke arbeitet seit ueber fuenfundzwanzig Jahren erfolgreich
+              fuer Kunden in Deutschland, Europa, Asien und den USA.
             </p>
           </div>
 
           <div className="hero-reveal sm:col-span-3 sm:col-start-11 sm:flex sm:justify-end">
-            <NavLink href="#approach" className="text-sm normal-case tracking-normal">
-              Approach&nbsp;→
+            <NavLink href="#kontakt" className="text-sm normal-case tracking-normal">
+              Kontakt&nbsp;→
             </NavLink>
           </div>
         </div>

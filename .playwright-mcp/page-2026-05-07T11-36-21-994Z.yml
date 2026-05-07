@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - link "Zum Inhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "BauWerke_Firmenlogo_Untertext_700" [ref=e14] [cursor=pointer]:
+        - /url: https://bauwerke.org/de/start/
+        - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e15]
+      - text:    
+      - banner [ref=e16]:
+        - navigation "Deutsch_mobil" [ref=e20]:
+          - button "Toggle Navigation  " [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: Toggle Navigation
+              - generic [ref=e24]:
+                - generic [ref=e25]: 
+                - generic [ref=e26]: 
+          - list:
+            - listitem:
+              - link "Profil":
+                - /url: https://bauwerke.org/de/profil/
+                - generic: Profil
+                - text: 
+              - button "Open submenu of Profil": 
+            - listitem:
+              - link "Blog":
+                - /url: https://bauwerke.org/de/blog/
+                - generic: Blog
+            - listitem:
+              - link "Projekte":
+                - /url: https://bauwerke.org/de/projekte-der-bauwerke-gmbh/
+                - generic: Projekte
+            - listitem:
+              - link "Kunden":
+                - /url: https://bauwerke.org/de/nationale-und-internationale-kunden-der-bauwerke-gmbh/
+                - generic: Kunden
+            - listitem:
+              - link "Kontakt":
+                - /url: "#kontakt"
+                - generic: Kontakt
+            - listitem:
+              - link "English":
+                - /url: https://bauwerke.org/en/bauwerke-gmbh-english/
+                - generic: English
+    - main [ref=e27]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - link "BW_EP_Plakat_einzeln" [ref=e38] [cursor=pointer]:
+            - /url: https://bauwerke.org/wp-content/uploads/2024/11/BW_EP_Plakat_einzeln-scaled.jpg
+          - generic [ref=e42]:
+            - link [ref=e45] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/1.jpg
+            - link [ref=e49] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/2-scaled.jpg
+        - generic [ref=e52]:
+          - generic [ref=e54]:
+            - heading "VERLEIHUNG DES BAUWERKE EXZELLENZ-PREISES 2024 IN BERLIN" [level=1] [ref=e56]
+            - generic [ref=e57]:
+              - paragraph [ref=e58]:
+                - text: Am 4. Dezember wurde der BauWerke Exzellenz-Preis für die Absolventen des Fachbereichs Architektur an der
+                - link "Hochschule für Technik und Wirtschaft Berlin (BHT)" [ref=e59] [cursor=pointer]:
+                  - /url: https://www.bht-berlin.de/
+                - text: mit den besten Bachelorarbeiten des Jahrgangs 2023/2024 in feierlichem Rahmen verliehen. Seit 2019 werden mit diesem Förderpreis jedes Jahr Nachwuchstalente für ihre außergewöhnlichen Leistungen geehrt.
+              - paragraph [ref=e60]: Die prämierten Arbeiten zeichnen sich durch herausragende gestalterische Qualität, technisch-konstruktive Durcharbeitung sowie Darstellung und Präsentation aus.
+              - paragraph [ref=e61]:
+                - text: Die Verleihung der Auszeichnungen an die diesjährigen Preisträger durch die Geschäftsführung der BauWerke GmbH, die Vorstände der
+                - link "Fördergemeinschaft Bauwesen e.V." [ref=e62] [cursor=pointer]:
+                  - /url: https://www.foerdergemeinschaft-bauwesen.de/
+                - text: und des
+                - link "Bundes Deutscher Baumeister, Architekten und Ingenieure e.V. (BDB)" [ref=e63] [cursor=pointer]:
+                  - /url: https://www.baumeister-online.de/
+                - text: erfolgte vor geladenem Fachpublikum in der Villa des BDB in Berlin.
+              - paragraph [ref=e64]: Wir gratulieren herzlich!
+              - paragraph [ref=e65]: "Fotoquelle: Fördergemeinschaft Bauwesen e.V."
+          - generic [ref=e69]:
+            - link "2" [ref=e72] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/2-1.jpg
+              - img "2" [ref=e73]
+            - link "3" [ref=e76] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/3-scaled.jpg
+              - img "3" [ref=e77]
+            - link "1" [ref=e80] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/1-1.jpg
+              - img "1" [ref=e81]
+            - link "4" [ref=e84] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/4.jpg
+              - img "4" [ref=e85]
+            - link "5" [ref=e88] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/5.jpg
+              - img "5" [ref=e89]
+            - link "6" [ref=e92] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2024/12/6-scaled.jpg
+              - img "6" [ref=e93]
+        - generic [ref=e96]:
+          - heading "KONTAKT" [level=2] [ref=e100]
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - text: Aus datenschutzrechtlichen Gründen benötigt Google Maps Ihre Einwilligung um geladen zu werden. Mehr Informationen finden Sie unter
+              - link "Datenschutzerklärung" [ref=e107] [cursor=pointer]:
+                - /url: https://bauwerke.org/de/datenschutzerklaerung/
+              - text: .
+            - button "Akzeptieren" [ref=e108] [cursor=pointer]
+          - generic [ref=e110]:
+            - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e113]
+            - generic [ref=e114]:
+              - paragraph [ref=e115]: Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+              - paragraph [ref=e116]: Sophie-Charlotten-Str. 92-94 | 14059 Berlin | Deutschland
+              - paragraph [ref=e117]: "Telefon: +49 (0)30 300 96 70"
+              - paragraph [ref=e118]: "E-Mail: info@bauwerke.org"
+              - paragraph [ref=e119]: "Presse- / Öffentlichkeitsarbeit: presse@bauwerke.org"
+              - generic [ref=e122]:
+                - link "facebook" [ref=e123] [cursor=pointer]:
+                  - /url: https://www.facebook.com/BueroBauWerke/
+                  - text: 
+                - link "instagram" [ref=e124] [cursor=pointer]:
+                  - /url: https://www.instagram.com/buerobauwerke/
+                  - text: 
+                - link "linkedin" [ref=e125] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/bauwerke/
+                  - text: 
+            - link "Kontaktdaten der BauWerke GmbH" [ref=e127] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2023/01/BauWerke-GmbH.vcf
+              - generic [ref=e128]: Download Visitenkarte (vcf)
+    - generic [ref=e129]:
+      - contentinfo [ref=e130]:
+        - paragraph [ref=e137]:
+          - link "Datenschutzerklärung" [ref=e138] [cursor=pointer]:
+            - /url: https://bauwerke.org/datenschutzerklaerung/
+          - link "Impressum" [ref=e139] [cursor=pointer]:
+            - /url: https://bauwerke.org/impressum/
+      - contentinfo [ref=e141]:
+        - generic [ref=e143]:
+          - generic [ref=e145]: © Copyright 2026 | BauWerke Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+          - generic [ref=e148]:
+            - link " Facebook" [ref=e149] [cursor=pointer]:
+              - /url: https://www.facebook.com/BueroBauWerke
+              - text: 
+              - generic [ref=e150]: Facebook
+            - link " Instagram" [ref=e151] [cursor=pointer]:
+              - /url: https://www.instagram.com/buerobauwerke
+              - text: 
+              - generic [ref=e152]: Instagram
+            - link " LinkedIn" [ref=e153] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/bauwerke/
+              - text: 
+              - generic [ref=e154]: LinkedIn
+  - region "Nach oben":
+    - link " Nach oben":
+      - /url: "#"
+      - text: 
+      - generic: Nach oben

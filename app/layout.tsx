@@ -9,9 +9,63 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "STUDIO MARS Berlin — Architekten",
+  metadataBase: new URL("https://bauwerke.org"),
+  title: {
+    default: "BauWerke Berlin — Konzeption, Planung und Betreuung von Bauwerken",
+    template: "%s — BauWerke Berlin",
+  },
   description:
-    "Architekten in Berlin, Architekturbüro vormals MARS Architekten. Architects in Berlin, architecture practice formerly MARS Architekten.",
+    "BauWerke GmbH in Berlin — Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken. Architecture, planning and project management for buildings, based in Berlin.",
+  applicationName: "BauWerke",
+  keywords: [
+    "BauWerke",
+    "BauWerke GmbH",
+    "BauWerke Berlin",
+    "Architektur Berlin",
+    "Architekten Berlin",
+    "Bauplanung",
+    "Projektsteuerung",
+    "Hochbau",
+    "Architecture Berlin",
+  ],
+  authors: [{ name: "BauWerke GmbH" }],
+  creator: "BauWerke GmbH",
+  publisher: "BauWerke GmbH",
+  category: "architecture",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "de-DE": "/",
+      "en-US": "/#english-section",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    alternateLocale: ["en_US"],
+    url: "/",
+    siteName: "BauWerke",
+    title: "BauWerke Berlin — Konzeption, Planung und Betreuung von Bauwerken",
+    description:
+      "BauWerke GmbH in Berlin — Konzeption, Planung und Betreuung von Bauwerken. Architecture, planning and project management for buildings.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BauWerke Berlin — Konzeption, Planung und Betreuung von Bauwerken",
+    description:
+      "BauWerke GmbH in Berlin — Konzeption, Planung und Betreuung von Bauwerken.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -1,0 +1,120 @@
+- generic [active] [ref=e1]:
+  - link "Zum Inhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "BauWerke_Firmenlogo_Untertext_700" [ref=e14] [cursor=pointer]:
+        - /url: https://bauwerke.org/de/start/
+        - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e15]
+      - text:    
+      - banner [ref=e16]:
+        - navigation "Deutsch_mobil" [ref=e20]:
+          - button "Toggle Navigation  " [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: Toggle Navigation
+              - generic [ref=e24]:
+                - generic [ref=e25]: 
+                - generic [ref=e26]: 
+          - list:
+            - listitem:
+              - link "Profil":
+                - /url: https://bauwerke.org/de/profil/
+                - generic: Profil
+                - text: 
+              - button "Open submenu of Profil": 
+            - listitem:
+              - link "Blog":
+                - /url: https://bauwerke.org/de/blog/
+                - generic: Blog
+            - listitem:
+              - link "Projekte":
+                - /url: https://bauwerke.org/de/projekte-der-bauwerke-gmbh/
+                - generic: Projekte
+            - listitem:
+              - link "Kunden":
+                - /url: https://bauwerke.org/de/nationale-und-internationale-kunden-der-bauwerke-gmbh/
+                - generic: Kunden
+            - listitem:
+              - link "Kontakt":
+                - /url: "#kontakt"
+                - generic: Kontakt
+            - listitem:
+              - link "English":
+                - /url: https://bauwerke.org/en/bauwerke-gmbh-english/
+                - generic: English
+    - main [ref=e27]:
+      - generic [ref=e31]:
+        - img "Vertical Village Apartments Leipzig" [ref=e38]
+        - generic [ref=e44]:
+          - heading "Vertical Village Apartments Leipzig" [level=1] [ref=e46]
+          - paragraph [ref=e48]:
+            - text: In Leipzig entsteht ein innovatives Nutzungskonzept für flächenoptimierte Vertical Village Apartments und Community-Flächen, umgesetzt von der
+            - link "CG Gruppe Leipzig" [ref=e49] [cursor=pointer]:
+              - /url: https://www.vertical-village.de/
+            - text: . Das ehemalige Technische Rathaus von Leipzig wird hierfür umgebaut und saniert. Neben Büro-, Verkaufs- und Gastronomieflächen werden insgesamt 296 Wohnungen realisiert. BauWerke wurde mit der Entwurfs- und Ausführungsplanung beauftragt.
+            - text: "Konzept: homuth+partner, Leipzig"
+          - generic [ref=e51]:
+            - link "Vertical Village Apartments Leipzig" [ref=e54] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Prag-scaled-e1666269962650.jpg
+              - img "Vertical Village Apartments Leipzig" [ref=e55]
+            - link "Vertical Village Apartments Leipzig" [ref=e58] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild01.jpg
+              - img "Vertical Village Apartments Leipzig" [ref=e59]
+        - generic [ref=e62]:
+          - heading "KONTAKT" [level=2] [ref=e66]
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - text: Aus datenschutzrechtlichen Gründen benötigt Google Maps Ihre Einwilligung um geladen zu werden. Mehr Informationen finden Sie unter
+              - link "Datenschutzerklärung" [ref=e73] [cursor=pointer]:
+                - /url: https://bauwerke.org/de/datenschutzerklaerung/
+              - text: .
+            - button "Akzeptieren" [ref=e74] [cursor=pointer]
+          - generic [ref=e76]:
+            - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e79]
+            - generic [ref=e80]:
+              - paragraph [ref=e81]: Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+              - paragraph [ref=e82]: Sophie-Charlotten-Str. 92-94 | 14059 Berlin | Deutschland
+              - paragraph [ref=e83]: "Telefon: +49 (0)30 300 96 70"
+              - paragraph [ref=e84]: "E-Mail: info@bauwerke.org"
+              - paragraph [ref=e85]: "Presse- / Öffentlichkeitsarbeit: presse@bauwerke.org"
+              - generic [ref=e88]:
+                - link "facebook" [ref=e89] [cursor=pointer]:
+                  - /url: https://www.facebook.com/BueroBauWerke/
+                  - text: 
+                - link "instagram" [ref=e90] [cursor=pointer]:
+                  - /url: https://www.instagram.com/buerobauwerke/
+                  - text: 
+                - link "linkedin" [ref=e91] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/bauwerke/
+                  - text: 
+            - link "Kontaktdaten der BauWerke GmbH" [ref=e93] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2023/01/BauWerke-GmbH.vcf
+              - generic [ref=e94]: Download Visitenkarte (vcf)
+    - generic [ref=e95]:
+      - contentinfo [ref=e96]:
+        - paragraph [ref=e103]:
+          - link "Datenschutzerklärung" [ref=e104] [cursor=pointer]:
+            - /url: https://bauwerke.org/datenschutzerklaerung/
+          - link "Impressum" [ref=e105] [cursor=pointer]:
+            - /url: https://bauwerke.org/impressum/
+      - contentinfo [ref=e107]:
+        - generic [ref=e109]:
+          - generic [ref=e111]: © Copyright 2026 | BauWerke Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+          - generic [ref=e114]:
+            - link " Facebook" [ref=e115] [cursor=pointer]:
+              - /url: https://www.facebook.com/BueroBauWerke
+              - text: 
+              - generic [ref=e116]: Facebook
+            - link " Instagram" [ref=e117] [cursor=pointer]:
+              - /url: https://www.instagram.com/buerobauwerke
+              - text: 
+              - generic [ref=e118]: Instagram
+            - link " LinkedIn" [ref=e119] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/bauwerke/
+              - text: 
+              - generic [ref=e120]: LinkedIn
+  - region "Nach oben":
+    - link " Nach oben":
+      - /url: "#"
+      - text: 
+      - generic: Nach oben

@@ -15,52 +15,62 @@ type StackCard = {
   imageSrc: string;
   graphicAlt: string;
   href: string;
+  isIntro?: boolean;
 };
 
 /** Top → bottom im Array = oben→unten im End-Stack (wie Referenz: Salmon, Cream, Teal, Dark). */
 const STACK_CARDS: StackCard[] = [
   {
-    id: "zlb-berlin",
-    title: "Zentral- und Landesbibliothek Berlin",
+    id: "stack-showcaase-card",
+    title: "Unser Blog",
+    description: "",
+    bgClass: "bg-transparent",
+    textClass: "text-black",
+    imageSrc: "",
+    graphicAlt: "",
+    href: "https://bauwerke.org/de/bauwerke-erweitert-die-fuehrung/",
+    isIntro: true,
+  },
+  {
+    id: "bauwerke-erweitert-die-fuehrung",
+    title: "BauWerke erweitert die Führung",
     description:
-      "Gewinnerbeitrag (2013) für eine Bibliothek als soziale und kulturelle Landmarke am Tempelhofer Feld mit hochflexibler Raumorganisation.",
+      "Im Rahmen der kontinuierlichen Weiterentwicklung des Unternehmens wird die Führungsstruktur bei BauWerke zum 1. Januar 2026 erweitert: Ronny Möhler (2. v. l.) wurde zum Partner, Raed Albokaie (links) zum Associate Partner und Sebastian Lange (2. v. r.) zum Associate berufen.",
     bgClass: "bg-[#161616]",
     textClass: "text-white",
     imageSrc:
-      "https://freight.cargo.site/w/1200/i/8e080337a6d3491f158f19b8d0c1ebcad3564fcbb110cbc31dd3ebd8de42a59a/ZLB-0-MARS-perspective_01.jpg",
+      "https://bauwerke.org/wp-content/uploads/2025/12/251219_BauWerke_Fuehrungsteam-scaled.jpg",
     graphicAlt:
-      "Visualisierung der Zentral- und Landesbibliothek Berlin am Tempelhofer Feld",
-    href: "https://mars-berlin.com/Zentral-und-Landesbibliothek-Berlin-Phase-I-Ein-1-Preis",
+      "Führungsteam von BauWerke mit den neuen Führungskräften",
+    href: "https://bauwerke.org/de/bauwerke-erweitert-die-fuehrung/",
   },
   {
-    id: "wettbewerb-smb2",
-    title: "Wettbewerb Serielles und modulares Bauen 2.0",
+    id: "bauwerke-exzellenz-preis-2024",
+    title: "Verleihung des BauWerke Exzellenz-Preises 2024 in Berlin",
     description:
-      "Abgeschlossenes Wettbewerbskonzept (2023), das mit einer standardisierten Systemwohnung eine große architektonische und städtebauliche Vielfalt ermöglicht.",
+      "Am 4. Dezember wurde der BauWerke Exzellenz-Preis für die Absolventen des Fachbereichs Architektur an der Hochschule für Technik und Wirtschaft Berlin (BHT) mit den besten Bachelorarbeiten des Jahrgangs 2023/2024 in feierlichem Rahmen verliehen.",
     bgClass: "bg-[#2A2A2A]",
     textClass: "text-white",
     imageSrc:
-      "https://freight.cargo.site/w/1200/i/87b86cbf196a8499949212dce23b7cbb015631812d89e468352aa03d23428986/SMB2-0-MARS-perspektive_clean.jpg",
-    graphicAlt: "Perspektive des Wettbewerbs Serielles und modulares Bauen 2.0",
-    href: "https://mars-berlin.com/Wettbewerb-SMB2",
+      "https://bauwerke.org/wp-content/uploads/2024/11/BW_EP_Plakat_einzeln-scaled.jpg",
+    graphicAlt: "Plakat zur Verleihung des BauWerke Exzellenz-Preises 2024",
+    href: "https://bauwerke.org/de/verleihung-des-bauwerke-exzellenz-preises-2024-in-berlin/",
   },
   {
-    id: "rathaus-der-zukunft",
-    title: "Rathaus der Zukunft",
+    id: "die-kalkscheune-wird-wiederbelebt",
+    title: "Die „Kalkscheune“ wird wiederbelebt",
     description:
-      "Offenes Rathaus als Ort der Begegnung und transparenter Verwaltung: ein vertikaler öffentlicher Raum mit dem Plenarsaal als demokratischem Zentrum.",
+      "Die „Kalkscheune“ – einstige Kultstätte der Berliner Kunst- und Veranstaltungsszene in Berlin-Mitte – wird wiederbelebt:",
     bgClass: "bg-[#3D3D3D]",
     textClass: "text-white",
     imageSrc:
-      "https://freight.cargo.site/w/1200/i/600e2fcb044247b6952ea10606da66cf859d3cd790e9801c1e03279715f142fe/RDZ-X-MARS-Rathaus_der_Zukunft_Axonometrie_cropped.jpg",
-    graphicAlt: "Axonometrie des Projekts Rathaus der Zukunft",
-    href: "https://mars-berlin.com/Rathaus-der-Zukunft",
+      "https://bauwerke.org/wp-content/uploads/2024/10/B_JS2_Luftaufnahme.jpg",
+    graphicAlt: "Luftaufnahme der denkmalgeschützten Kalkscheune in Berlin",
+    href: "https://bauwerke.org/de/die-kalkscheune-wird-wiederbelebt/",
   },
 ];
 
 /** z-index rises with stack order so each new card lays in front of the previous. */
-const CARD_Z = [1, 2, 3] as const;
-
 type StackedCardsShowcaseProps = {
   reducedMotion: boolean;
 };
@@ -92,34 +102,53 @@ function CardRowLayout({
     "aspect-[4/3] max-h-[min(50svh,19rem)] md:aspect-auto md:max-h-none md:h-[min(56vw,22rem)] md:w-[min(56vw,22rem)] lg:h-[min(48vw,32rem)] lg:w-[min(48vw,32rem)] xl:h-[min(44vw,38rem)] xl:w-[min(44vw,38rem)]";
 
   const row = `flex flex-col justify-start ${gap} md:flex-row md:items-start md:justify-between md:gap-[clamp(1.1rem,2.75vw,2.25rem)]`;
+  const isIntro = Boolean(card.isIntro);
 
   return (
-    <div className={variant === "animated" ? `flex min-h-0 w-full flex-1 ${row}` : row}>
-      <div className="shrink-0 space-y-3 md:max-w-[24rem] lg:max-w-[30rem]">
-        <h3
-          className={`max-w-[18ch] lg:max-w-[24ch] font-sans ${titleClass} font-bold uppercase italic tracking-tight ${card.textClass}`}
+    <div
+      className={
+        isIntro
+          ? "flex h-full w-full items-start justify-center"
+          : variant === "animated"
+            ? `flex min-h-0 w-full flex-1 ${row}`
+            : row
+      }
+    >
+      {isIntro ? (
+        <h2
+          className={`text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight ${card.textClass}`}
         >
           {card.title}
-        </h3>
-        <p className={`max-w-[34ch] lg:max-w-[44ch] text-sm leading-[1.45] ${card.textClass}/85`}>
-          {card.description}
-        </p>
-      </div>
-      <div
-        className={`relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl ${
-          variant === "static" ? imgBoxStatic : imgBoxAnimated
-        }`}
-        role="img"
-        aria-label={card.graphicAlt}
-      >
-        <img
-          src={card.imageSrc}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+        </h2>
+      ) : (
+        <>
+          <div className="shrink-0 space-y-3 md:max-w-[24rem] lg:max-w-[30rem]">
+            <h3
+              className={`max-w-[18ch] lg:max-w-[24ch] font-sans ${titleClass} font-bold uppercase italic tracking-tight ${card.textClass}`}
+            >
+              {card.title}
+            </h3>
+            <p className={`max-w-[34ch] lg:max-w-[44ch] text-sm leading-[1.45] ${card.textClass}/85`}>
+              {card.description}
+            </p>
+          </div>
+          <div
+            className={`relative w-full max-w-full shrink-0 overflow-hidden rounded-2xl ${
+              variant === "static" ? imgBoxStatic : imgBoxAnimated
+            }`}
+            role="img"
+            aria-label={card.graphicAlt}
+          >
+            <img
+              src={card.imageSrc}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -146,14 +175,15 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
       const firstEl = cardRefs.current[0];
       const secondEl = cardRefs.current[1];
       const thirdEl = cardRefs.current[2];
-      if (!firstEl || !secondEl || !thirdEl) return;
+      const fourthEl = cardRefs.current[3];
+      if (!firstEl || !secondEl || !thirdEl || !fourthEl) return;
 
-      const cardEls = [firstEl, secondEl, thirdEl];
+      const cardEls = [firstEl, secondEl, thirdEl, fourthEl];
       const setUnderH3Offset = () => {
-        const heading = thirdEl.querySelector("h3");
+        const heading = fourthEl.querySelector("h3, h2");
         if (!heading) return;
         const headingHeight = heading.getBoundingClientRect().height;
-        const paddingTop = Number.parseFloat(getComputedStyle(thirdEl).paddingTop) || 0;
+        const paddingTop = Number.parseFloat(getComputedStyle(fourthEl).paddingTop) || 0;
         const rawStep = headingHeight + paddingTop + 8;
         const stepPx = Math.min(Math.max(rawStep, 56), 88);
         stack.style.setProperty("--stack-under-h3", `${stepPx}px`);
@@ -168,7 +198,7 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
 
       gsap.set(stack, { force3D: true, willChange: "transform" });
       gsap.set(firstEl, { yPercent: 0, force3D: true, willChange: "transform" });
-      gsap.set([secondEl, thirdEl], {
+      gsap.set([secondEl, thirdEl, fourthEl], {
         yPercent: 108,
         force3D: true,
         willChange: "transform",
@@ -191,25 +221,19 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
       timeline.to(stack, { yPercent: -1.4, duration: 1.1 }, t);
       t += 1.15;
 
-      timeline.to(stack, { yPercent: -5.2, duration: 3.4 }, t);
-      timeline.fromTo(
-        secondEl,
-        { yPercent: 108 },
-        { yPercent: 0, duration: 3.95 },
-        t + 0.15,
-      );
-      t += 4.25;
+      timeline.to(stack, { yPercent: -5.2, duration: 3.2 }, t);
+      timeline.fromTo(secondEl, { yPercent: 108 }, { yPercent: 0, duration: 3.75 }, t + 0.15);
+      t += 4.05;
 
-      timeline.to(stack, { yPercent: -9.6, duration: 3.25 }, t);
-      timeline.fromTo(
-        thirdEl,
-        { yPercent: 108 },
-        { yPercent: 0, duration: 4.15 },
-        t + 0.18,
-      );
-      t += 4.35;
+      timeline.to(stack, { yPercent: -9.6, duration: 3.2 }, t);
+      timeline.fromTo(thirdEl, { yPercent: 108 }, { yPercent: 0, duration: 3.9 }, t + 0.16);
+      t += 4.1;
 
-      timeline.to(stack, { yPercent: -11.8, duration: 1.2 }, t);
+      timeline.to(stack, { yPercent: -13.8, duration: 3.2 }, t);
+      timeline.fromTo(fourthEl, { yPercent: 108 }, { yPercent: 0, duration: 3.95 }, t + 0.18);
+      t += 4.2;
+
+      timeline.to(stack, { yPercent: -15.6, duration: 1.2 }, t);
 
       ScrollTrigger.refresh();
 
@@ -222,7 +246,13 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
     { scope: rootRef, dependencies: [reducedMotion, isMdUp] },
   );
 
-  const cardsDom = [...STACK_CARDS].reverse();
+  const cardsDom: StackCard[] = [
+    STACK_CARDS[0],
+    STACK_CARDS[1],
+    STACK_CARDS[2],
+    STACK_CARDS[3],
+  ];
+  const mobileCards = STACK_CARDS.filter((card) => !card.isIntro);
 
   /* Nur prefers-reduced-motion: komplette statische Section (gleiches Markup wie Mobil). */
   if (reducedMotion) {
@@ -235,11 +265,11 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
       >
         <h2
           id="stack-showcase-heading"
-          className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] px-[clamp(1rem,4vw,2.5rem)] text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
+          className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] w-full max-w-[42rem] px-0 text-left font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
         >
-          Ein Ausschnitt unserer Arbeit
+          Unser Blog
         </h2>
-        <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] px-[clamp(1rem,4vw,2.5rem)] text-center text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
+        <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] text-left text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
           Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
         <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
@@ -268,15 +298,15 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
       <div className="px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(3rem,8vw,6rem)] pt-[clamp(3rem,8vw,6rem)] md:hidden">
         <h2
           id="stack-showcase-heading"
-          className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] px-[clamp(1rem,4vw,2.5rem)] text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
+          className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] w-full max-w-[42rem] px-0 text-left font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
         >
-          Ein Ausschnitt unserer Arbeit
+          Unser Blog
         </h2>
-        <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] px-[clamp(1rem,4vw,2.5rem)] text-center text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
+        <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] text-left text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
           Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
         <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
-          {STACK_CARDS.map((card) => (
+          {mobileCards.map((card) => (
             <Link
               key={`mobile-${card.id}`}
               href={card.href}
@@ -295,7 +325,7 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
 
       {/* Desktop: Scroll-Story + GSAP */}
       <div className="hidden md:block">
-        <h2 className="sr-only">Ein Ausschnitt unserer Arbeit</h2>
+        <h2 className="sr-only">Unser Blog</h2>
         <p className="sr-only">
           Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
@@ -328,7 +358,7 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
                     bottom: `calc(${STACK_CARDS.length - 1 - stackIndex} * var(--stack-under-h3))`,
                     left: "clamp(1rem, 4vw, 2.5rem)",
                     right: "clamp(1rem, 4vw, 2.5rem)",
-                    zIndex: CARD_Z[stackIndex],
+                    zIndex: stackIndex + 1,
                   }}
                 >
                   <CardRowLayout card={card} variant="animated" />

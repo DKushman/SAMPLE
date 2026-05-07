@@ -129,14 +129,14 @@ export function SiteFooterReveal() {
             id="site-footer-kicker"
             className="max-w-[40ch] font-sans text-[clamp(0.72rem,1vw,0.86rem)] leading-[1.35] text-white/72 md:max-w-[32ch]"
           >
-            Ab dem 1. Februar 2026 finden Sie uns unter Alt-Moabit 103, 10559 Berlin.
+            Gesellschaft fuer Konzeption, Planung und Betreuung von Bauwerken mbH.
           </p>
 
           <div className="w-full">
             <PillArrowButton
               id="site-footer-cta-link"
-              href="mailto:studio@mars-berlin.com"
-              label="E-Mail schreiben"
+              href="mailto:info@bauwerke.org"
+              label="E-Mail an BauWerke"
               tone="light"
               className="w-full justify-start sm:w-auto"
             />
@@ -160,13 +160,28 @@ export function SiteFooterReveal() {
                 </Link>
               </li>
               <li>
-                <Link className={navClass} href="#team-section">
-                  Team
+                <Link className={navClass} href="#blog-section">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#projekte-section">
+                  Projekte
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#kunden-section">
+                  Kunden
                 </Link>
               </li>
               <li>
                 <Link className={navClass} href="#site-contact-cta-section">
                   Kontakt
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#english-section">
+                  English
                 </Link>
               </li>
             </ul>
@@ -176,7 +191,17 @@ export function SiteFooterReveal() {
               <li>
                 <a
                   className={navClass}
-                  href="https://www.instagram.com/studiomarsberlin/"
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  className={navClass}
+                  href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -186,7 +211,7 @@ export function SiteFooterReveal() {
               <li>
                 <a
                   className={navClass}
-                  href="https://www.linkedin.com/company/studio-mars-berlin"
+                  href="https://www.linkedin.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -198,19 +223,21 @@ export function SiteFooterReveal() {
           <div id="site-footer-contact-col" className="min-w-0 break-words">
             <p className="font-medium text-white">Kontakt:</p>
             <ul className="mt-[clamp(0.22rem,0.5vw,0.35rem)] space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>studio@mars-berlin.com</li>
-              <li>Tel +49 30 200 59 400</li>
-              <li>Bewerbungen: apply@mars-berlin.com</li>
+              <li>info@bauwerke.org</li>
+              <li>Telefon: +49 (0)30 300 96 70</li>
+              <li>Presse: presse@bauwerke.org</li>
             </ul>
           </div>
           <div id="site-footer-social-col" className="min-w-0 break-words">
             <p className="font-medium text-white">Anschrift:</p>
             <ul className="mt-[clamp(0.22rem,0.5vw,0.35rem)] space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>STUDIO MARS Berlin GmbH</li>
-              <li>Alt-Moabit 103</li>
-              <li>10559 Berlin</li>
+              <li>BauWerke GmbH</li>
+              <li>Sophie-Charlotten-Str. 92-94</li>
+              <li>14059 Berlin | Deutschland</li>
             </ul>
-            <p className="mt-[clamp(0.8rem,1.5vw,1.1rem)]">© STUDIO MARS Berlin {new Date().getFullYear()}</p>
+            <p className="mt-[clamp(0.8rem,1.5vw,1.1rem)]">
+              © BauWerke {new Date().getFullYear()}
+            </p>
           </div>
         </section>
 
@@ -218,14 +245,9 @@ export function SiteFooterReveal() {
           id="site-footer-brand"
           className="mt-[clamp(1rem,2.3vw,1.8rem)] border-t border-white/10 pt-[clamp(1rem,2.3vw,1.8rem)]"
         >
-          <img
-            src="/STUDIO.MARS.png"
-            alt="STUDIO.MARS"
-            className="block h-auto w-full"
-            loading="lazy"
-            decoding="async"
-          />
-
+          <span className="block max-w-[100vw] font-sans font-black uppercase leading-[0.9] tracking-tighter text-white [font-size:clamp(1.75rem,8vw,9.5rem)]">
+            BAUWERK
+          </span>
         </div>
       </div>
     </footer>

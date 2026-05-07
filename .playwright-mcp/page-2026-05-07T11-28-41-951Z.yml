@@ -1,0 +1,127 @@
+- generic [active] [ref=e1]:
+  - link "Zum Inhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "BauWerke_Firmenlogo_Untertext_700" [ref=e14] [cursor=pointer]:
+        - /url: https://bauwerke.org/de/start/
+        - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e15]
+      - text:    
+      - banner [ref=e16]:
+        - navigation "Deutsch_mobil" [ref=e20]:
+          - button "Toggle Navigation  " [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: Toggle Navigation
+              - generic [ref=e24]:
+                - generic [ref=e25]: 
+                - generic [ref=e26]: 
+          - list:
+            - listitem:
+              - link "Profil":
+                - /url: https://bauwerke.org/de/profil/
+                - generic: Profil
+                - text: 
+              - button "Open submenu of Profil": 
+            - listitem:
+              - link "Blog":
+                - /url: https://bauwerke.org/de/blog/
+                - generic: Blog
+            - listitem:
+              - link "Projekte":
+                - /url: https://bauwerke.org/de/projekte-der-bauwerke-gmbh/
+                - generic: Projekte
+            - listitem:
+              - link "Kunden":
+                - /url: https://bauwerke.org/de/nationale-und-internationale-kunden-der-bauwerke-gmbh/
+                - generic: Kunden
+            - listitem:
+              - link "Kontakt":
+                - /url: "#kontakt"
+                - generic: Kontakt
+            - listitem:
+              - link "English":
+                - /url: https://bauwerke.org/en/bauwerke-gmbh-english/
+                - generic: English
+    - main [ref=e27]:
+      - generic [ref=e31]:
+        - generic [ref=e33]:
+          - img "Wohnhaus im Grünen, Berlin" [ref=e38]
+          - generic [ref=e40]:
+            - img "Wohnhaus im Grünen, Berlin" [ref=e43]
+            - img "Wohnhaus im Grünen, Berlin" [ref=e46]
+        - generic [ref=e50]:
+          - heading "Wohnhaus im Grünen, Berlin" [level=1] [ref=e52]
+          - paragraph [ref=e54]:
+            - text: Neubau eines Einfamilienwohnhauses
+            - text: "Leistungen: Entwurf, Planung, Bauüberwachung"
+          - generic [ref=e56]:
+            - link "Wohnhaus im Grünen, Berlin" [ref=e59] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild04-3.jpg
+              - img "Wohnhaus im Grünen, Berlin" [ref=e60]
+            - link "Wohnhaus im Grünen, Berlin" [ref=e63] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild02-2.jpg
+              - img "Wohnhaus im Grünen, Berlin" [ref=e64]
+            - link "Wohnhaus im Grünen, Berlin" [ref=e67] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild03-3.jpg
+              - img "Wohnhaus im Grünen, Berlin" [ref=e68]
+            - link "Wohnhaus im Grünen, Berlin" [ref=e71] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2022/11/Bild05-3.jpg
+              - img "Wohnhaus im Grünen, Berlin" [ref=e72]
+        - generic [ref=e75]:
+          - heading "KONTAKT" [level=2] [ref=e79]
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - text: Aus datenschutzrechtlichen Gründen benötigt Google Maps Ihre Einwilligung um geladen zu werden. Mehr Informationen finden Sie unter
+              - link "Datenschutzerklärung" [ref=e86] [cursor=pointer]:
+                - /url: https://bauwerke.org/de/datenschutzerklaerung/
+              - text: .
+            - button "Akzeptieren" [ref=e87] [cursor=pointer]
+          - generic [ref=e89]:
+            - img "Logo BauWerke Städtebau, Architektur, Design, Gesamtplanung" [ref=e92]
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+              - paragraph [ref=e95]: Sophie-Charlotten-Str. 92-94 | 14059 Berlin | Deutschland
+              - paragraph [ref=e96]: "Telefon: +49 (0)30 300 96 70"
+              - paragraph [ref=e97]: "E-Mail: info@bauwerke.org"
+              - paragraph [ref=e98]: "Presse- / Öffentlichkeitsarbeit: presse@bauwerke.org"
+              - generic [ref=e101]:
+                - link "facebook" [ref=e102] [cursor=pointer]:
+                  - /url: https://www.facebook.com/BueroBauWerke/
+                  - text: 
+                - link "instagram" [ref=e103] [cursor=pointer]:
+                  - /url: https://www.instagram.com/buerobauwerke/
+                  - text: 
+                - link "linkedin" [ref=e104] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/bauwerke/
+                  - text: 
+            - link "Kontaktdaten der BauWerke GmbH" [ref=e106] [cursor=pointer]:
+              - /url: https://bauwerke.org/wp-content/uploads/2023/01/BauWerke-GmbH.vcf
+              - generic [ref=e107]: Download Visitenkarte (vcf)
+    - generic [ref=e108]:
+      - contentinfo [ref=e109]:
+        - paragraph [ref=e116]:
+          - link "Datenschutzerklärung" [ref=e117] [cursor=pointer]:
+            - /url: https://bauwerke.org/datenschutzerklaerung/
+          - link "Impressum" [ref=e118] [cursor=pointer]:
+            - /url: https://bauwerke.org/impressum/
+      - contentinfo [ref=e120]:
+        - generic [ref=e122]:
+          - generic [ref=e124]: © Copyright 2026 | BauWerke Gesellschaft für Konzeption, Planung und Betreuung von Bauwerken mbH
+          - generic [ref=e127]:
+            - link " Facebook" [ref=e128] [cursor=pointer]:
+              - /url: https://www.facebook.com/BueroBauWerke
+              - text: 
+              - generic [ref=e129]: Facebook
+            - link " Instagram" [ref=e130] [cursor=pointer]:
+              - /url: https://www.instagram.com/buerobauwerke
+              - text: 
+              - generic [ref=e131]: Instagram
+            - link " LinkedIn" [ref=e132] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/bauwerke/
+              - text: 
+              - generic [ref=e133]: LinkedIn
+  - region "Nach oben":
+    - link " Nach oben":
+      - /url: "#"
+      - text: 
+      - generic: Nach oben
