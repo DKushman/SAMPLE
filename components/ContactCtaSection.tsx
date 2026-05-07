@@ -8,8 +8,8 @@ type ContactCtaSectionProps = {
   headingBoldStart?: string;
   headingLight?: string;
   headingBoldEnd?: string;
-  lawyersPhone?: string;
-  notariesPhone?: string;
+  phoneLine?: string;
+  applicationsLine?: string;
   buttonLabel?: string;
   buttonHref?: string;
   className?: string;
@@ -17,14 +17,14 @@ type ContactCtaSectionProps = {
 
 export function ContactCtaSection({
   id = "site-contact-cta-section",
-  email = "kanzlei@tegtmeier-berlin.de",
-  headingBoldStart = "Wir sind",
-  headingLight = "für Sie bei jedem",
-  headingBoldEnd = "Anliegen erreichbar.",
-  lawyersPhone = "030 / 283 096-0",
-  notariesPhone = "030 / 283 096-50",
+  email = "studio@mars-berlin.com",
+  headingBoldStart = "Wir freuen uns",
+  headingLight = "auf Ihre",
+  headingBoldEnd = "Nachricht.",
+  phoneLine = "+49 30 200 59 400",
+  applicationsLine = "apply@mars-berlin.com",
   buttonLabel = "Kontakt aufnehmen",
-  buttonHref = "/",
+  buttonHref = "mailto:studio@mars-berlin.com",
   className = "",
 }: ContactCtaSectionProps) {
   return (
@@ -38,7 +38,7 @@ export function ContactCtaSection({
 
         <h2
           id="site-contact-cta-heading"
-          className="mt-[clamp(0.75rem,1.6vw,1.1rem)] max-w-[19ch] font-sans text-[clamp(2rem,6.2vw,4.5rem)] leading-[0.98] tracking-tight text-black"
+          className="mt-[clamp(0.75rem,1.6vw,1.1rem)] max-w-[22ch] font-sans text-[clamp(2rem,6.2vw,4.5rem)] leading-[0.98] tracking-tight text-black"
         >
           <span className="font-bold">{headingBoldStart}</span>{" "}
           <span className="font-light">{headingLight}</span>{" "}
@@ -47,12 +47,12 @@ export function ContactCtaSection({
 
         <div className="mt-[clamp(0.9rem,2vw,1.4rem)] flex flex-col items-center gap-[clamp(0.3rem,0.7vw,0.5rem)] text-[clamp(0.92rem,1.2vw,1.08rem)] text-black/72">
           <p>
-            <span className="font-bold text-black">Rechtsanwälte:</span>{" "}
-            <span className="font-light">{lawyersPhone}</span>
+            <span className="font-bold text-black">Telefon:</span>{" "}
+            <span className="font-light">{phoneLine}</span>
           </p>
           <p>
-            <span className="font-bold text-black">Notare:</span>{" "}
-            <span className="font-light">{notariesPhone}</span>
+            <span className="font-bold text-black">Bewerbungen:</span>{" "}
+            <span className="font-light">{applicationsLine}</span>
           </p>
         </div>
 

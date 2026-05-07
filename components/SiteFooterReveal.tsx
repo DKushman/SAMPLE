@@ -1,9 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { PillArrowButton } from "@/components/PillArrowButton";
-import { publicAssetPath } from "@/lib/publicAssetPath";
 
 export function SiteFooterReveal() {
   const footerRef = useRef<HTMLElement | null>(null);
@@ -107,6 +106,9 @@ export function SiteFooterReveal() {
     };
   }, []);
 
+  const navClass =
+    "text-white/76 underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+
   return (
     <footer
       ref={footerRef}
@@ -125,16 +127,16 @@ export function SiteFooterReveal() {
         >
           <p
             id="site-footer-kicker"
-            className="max-w-[34ch] font-sans text-[clamp(0.72rem,1vw,0.86rem)] leading-[1.35] text-white/72 md:max-w-[22ch]"
+            className="max-w-[40ch] font-sans text-[clamp(0.72rem,1vw,0.86rem)] leading-[1.35] text-white/72 md:max-w-[32ch]"
           >
-            Für konkrete Anliegen nutzen Sie bitte eines unserer Online-Formulare.
+            Ab dem 1. Februar 2026 finden Sie uns unter Alt-Moabit 103, 10559 Berlin.
           </p>
 
           <div className="w-full">
             <PillArrowButton
               id="site-footer-cta-link"
-              href="/"
-              label="Kontakt aufnehmen"
+              href="mailto:studio@mars-berlin.com"
+              label="E-Mail schreiben"
               tone="light"
               className="w-full justify-start sm:w-auto"
             />
@@ -147,55 +149,82 @@ export function SiteFooterReveal() {
         >
           <div id="site-footer-links-col" className="min-w-0">
             <ul className="space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>Kanzlei</li>
-              <li>Rechtsanwälte-Notare</li>
-              <li>Rechtsgebiete</li>
-              <li>Notarformulare</li>
-              <li>Mandanteninformationen</li>
-              <li>Kontakt</li>
+              <li>
+                <Link className={navClass} href="#projekte-section">
+                  Projekte
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#profil-section">
+                  Profil
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#team-section">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link className={navClass} href="#site-contact-cta-section">
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
           <div id="site-footer-sitemap-col" className="min-w-0">
             <ul className="space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>Karriere</li>
-              <li>Impressum</li>
-              <li>Datenschutz</li>
-              <li>Suchen</li>
+              <li>
+                <a
+                  className={navClass}
+                  href="https://www.instagram.com/studiomarsberlin/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  className={navClass}
+                  href="https://www.linkedin.com/company/studio-mars-berlin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
           <div id="site-footer-contact-col" className="min-w-0 break-words">
-            <p className="font-medium text-white">Mail:</p>
+            <p className="font-medium text-white">Kontakt:</p>
             <ul className="mt-[clamp(0.22rem,0.5vw,0.35rem)] space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>kanzlei@tegtmeier-berlin.de</li>
-              <li>Telefon +49(0)30 - 283 096 - 0</li>
-              <li>Notare +49(0)30 - 283 096 - 50</li>
-              <li>Fax +49(0)30 - 283 096 - 39</li>
-              <li>www.tegtmeier-berlin.de</li>
+              <li>studio@mars-berlin.com</li>
+              <li>Tel +49 30 200 59 400</li>
+              <li>Bewerbungen: apply@mars-berlin.com</li>
             </ul>
           </div>
           <div id="site-footer-social-col" className="min-w-0 break-words">
             <p className="font-medium text-white">Anschrift:</p>
             <ul className="mt-[clamp(0.22rem,0.5vw,0.35rem)] space-y-[clamp(0.18rem,0.42vw,0.32rem)]">
-              <li>Tegtmeier &amp; Partner</li>
-              <li>Brunnenstraße 49</li>
-              <li>D-10 115 Berlin-Mitte</li>
+              <li>STUDIO MARS Berlin GmbH</li>
+              <li>Alt-Moabit 103</li>
+              <li>10559 Berlin</li>
             </ul>
-            <p className="mt-[clamp(0.8rem,1.5vw,1.1rem)]">© Tegtmeier &amp; Partner 2026</p>
+            <p className="mt-[clamp(0.8rem,1.5vw,1.1rem)]">© STUDIO MARS Berlin {new Date().getFullYear()}</p>
           </div>
         </section>
 
-        <span
+        <div
           id="site-footer-brand"
-          className="mt-[clamp(1rem,2.3vw,1.8rem)] block w-full"
+          className="mt-[clamp(1rem,2.3vw,1.8rem)] border-t border-white/10 pt-[clamp(1rem,2.3vw,1.8rem)]"
         >
-          <Image
-            src={publicAssetPath("/TEGTMEIER%20%26%20PARTNER.png")}
-            alt="TEGTMEIER & PARTNER"
-            width={2400}
-            height={300}
-            className="h-auto w-full"
-          />
-        </span>
+          <p className="font-sans text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold uppercase tracking-[0.08em] text-white/95">
+            STUDIO MARS Berlin
+          </p>
+          <p className="mt-2 max-w-[48ch] font-sans text-[clamp(0.7rem,0.95vw,0.82rem)] leading-[1.4] text-white/55">
+            vormals MARS Gesellschaft von Architekten mbH · Amtsgericht Charlottenburg HRB189780
+          </p>
+        </div>
       </div>
     </footer>
   );

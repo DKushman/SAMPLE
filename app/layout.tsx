@@ -9,9 +9,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Tegtmeier & Partner — Rechtsanwälte & Notare",
+  title: "STUDIO MARS Berlin — Architekten",
   description:
-    "Rechtsanwaltskanzlei und Notariat: klare Begleitung in juristischen und notariellen Mandaten.",
+    "Architekten in Berlin, Architekturbüro vormals MARS Architekten. Architects in Berlin, architecture practice formerly MARS Architekten.",
 };
 
 export default function RootLayout({

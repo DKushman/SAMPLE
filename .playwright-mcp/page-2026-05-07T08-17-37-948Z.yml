@@ -1,0 +1,24 @@
+- banner [ref=e7]:
+  - generic [ref=e8]:
+    - link [ref=e11] [cursor=pointer]:
+      - /url: HOME
+      - img [ref=e12]
+    - navigation [ref=e13]:
+      - listitem [ref=e14]:
+        - link "PROJEKTE" [ref=e16] [cursor=pointer]:
+          - /url: Home
+      - listitem [ref=e17]:
+        - link "PROFIL" [ref=e19] [cursor=pointer]:
+          - /url: PROFIL
+      - listitem [ref=e20]:
+        - link "TEAM" [ref=e22] [cursor=pointer]:
+          - /url: TEAM
+      - listitem [ref=e23]:
+        - link "KONTAKT" [ref=e25] [cursor=pointer]:
+          - /url: KONTAKT
+      - listitem [ref=e26]:
+        - link "︎" [ref=e28] [cursor=pointer]:
+          - /url: https://www.instagram.com/studiomarsberlin/
+      - listitem [ref=e29]:
+        - link "︎" [ref=e31] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/studio-mars-berlin

@@ -13,42 +13,49 @@ type TeamMember = {
   imageSrc: string;
 };
 
+/** Namen und Rollen nach mars-berlin.com/TEAM — Porträts Platzhalter (Pexels). */
 const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: "michael-tegtmeier",
-    name: "Dr. Michael Tegtmeier",
-    role: "Rechtsanwalt, Notar, Partner",
-    imageSrc: "/tegtmeier_2.500x500.jpg",
+    id: "tarek-massalme",
+    name: "Tarek Massalme",
+    role: "Dipl.-Ing. Architekt · Geschäftsführer",
+    imageSrc:
+      "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "anke-reiter",
-    name: "Anke Reiter",
-    role: "Rechtsanwältin, Notarin, Partnerin",
-    imageSrc: "/reiter-1.500x500.jpg",
+    id: "philip-rieseberg",
+    name: "Philip Rieseberg",
+    role: "Dipl.-Ing. Architekt · Geschäftsführer",
+    imageSrc:
+      "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "jörg-schulze-bourcevet",
-    name: "Jörg Schulze-Bourcevet",
-    role: "Rechtsanwalt, Notar, Partner",
-    imageSrc: "/schulze.500x500.jpg",
+    id: "jan-oliver-kunze",
+    name: "Jan-Oliver Kunze",
+    role: "Dipl.-Ing. Architekt · Geschäftsführer",
+    imageSrc:
+      "https://images.pexels.com/photos/3785078/pexels-photo-3785078.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "philipp-schürer",
-    name: "Philipp Schürer",
-    role: "Rechtsanwalt, Partner",
-    imageSrc: "/schurer-1.500x500.jpg",
+    id: "simon-schlinkmann",
+    name: "Simon Schlinkmann",
+    role: "Dipl.-Ing. Architekt",
+    imageSrc:
+      "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "jana-meyer",
-    name: "Jana Meyer",
-    role: "Rechtsanwältin, Notarin, Partnerin",
-    imageSrc: "/mayer_2.500x500.jpg",
+    id: "hsuan-min-wang",
+    name: "Hsuan-Min Wang",
+    role: "Dipl.-Ing. Architektin",
+    imageSrc:
+      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "pauline-schönbach",
-    name: "Pauline Schönbach",
-    role: "Rechtsanwältin (angestellte Berufsträgerin)",
-    imageSrc: "/pauline-schoenbach-crop.500x500.jpg",
+    id: "alexander-grahms",
+    name: "Alexander Grahms",
+    role: "M.Sc. Architektur",
+    imageSrc:
+      "https://images.pexels.com/photos/3789108/pexels-photo-3789108.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
@@ -138,13 +145,13 @@ export function TeamSection() {
             id="team-section-kicker"
             className="block font-sans text-[clamp(0.65rem,0.95vw,0.82rem)] font-medium uppercase tracking-[0.2em] text-black/70"
           >
-            + Unser Team
+            Team
           </span>
           <h2
             id="team-section-heading"
             className="mt-[clamp(0.55rem,1.3vw,0.95rem)] font-sans text-[clamp(2rem,5vw,4rem)] font-normal leading-[0.98] tracking-tight text-black"
           >
-            Lernt uns kennen!
+            Menschen hinter den Projekten
           </h2>
         </div>
 
@@ -232,8 +239,8 @@ export function TeamSection() {
 
                 <Link
                   id={`team-section-card-overlay-link-${member.id}`}
-                  href="/"
-                  aria-label={`Mehr über ${member.name}`}
+                  href="#site-contact-cta-section"
+                  aria-label={`Kontakt zu ${member.name}`}
                   className="inline-flex h-[clamp(1.35rem,1.85vw,1.62rem)] w-[clamp(1.35rem,1.85vw,1.62rem)] shrink-0 items-center justify-center rounded-full border border-black/12 bg-white text-black/75 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:rotate-[-45deg]"
                 >
                   <svg

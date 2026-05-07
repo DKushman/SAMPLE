@@ -14,16 +14,10 @@ import { gsap, SplitText } from "@/lib/gsap-client";
 import { HEADER_SHELL_IN_DURATION_S } from "@/lib/heroRevealTiming";
 
 const MENU_LINKS = [
-  { id: "menu-link-kanzlei", label: "Kanzlei" },
-  { id: "menu-link-rechtsanwaelte-notare", label: "Rechtsanwälte-Notare" },
-  { id: "menu-link-rechtsgebiete", label: "Rechtsgebiete" },
-  { id: "menu-link-notarformulare", label: "Notarformulare" },
-  {
-    id: "menu-link-mandanteninformationen",
-    label: "Mandanteninformationen",
-  },
-  { id: "menu-link-kontakt", label: "Kontakt" },
-  { id: "menu-link-suchen", label: "Suchen" },
+  { id: "menu-link-projekte", label: "Projekte", href: "#projekte-section" },
+  { id: "menu-link-profil", label: "Profil", href: "#profil-section" },
+  { id: "menu-link-team", label: "Team", href: "#team-section" },
+  { id: "menu-link-kontakt", label: "Kontakt", href: "#site-contact-cta-section" },
 ] as const;
 
 type SplitTextInstance = InstanceType<typeof SplitText>;
@@ -35,7 +29,7 @@ type SiteHeaderProps = {
 };
 
 export function SiteHeader({
-  contactHref = "mailto:kontakt@tegtmeier-partner.de",
+  contactHref = "mailto:studio@mars-berlin.com",
   introDone = false,
   reducedMotion = false,
 }: SiteHeaderProps) {
@@ -359,7 +353,7 @@ export function SiteHeader({
                   >
                     <Link
                       id={item.id}
-                      href="/"
+                      href={item.href}
                       aria-label={item.label}
                       className={
                         "group block w-full max-w-full text-center text-[inherit] leading-[inherit] " +

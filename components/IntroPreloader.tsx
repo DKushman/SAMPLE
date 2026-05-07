@@ -195,7 +195,7 @@ export function IntroPreloader({
       aria-busy="true"
     >
       <div
-        className="absolute inset-0 bg-[#273149]"
+        className="absolute inset-0 bg-[#000000]"
         aria-hidden="true"
       />
 
@@ -218,7 +218,7 @@ export function IntroPreloader({
             id="intro-preloader-headline"
             className="split max-w-[100vw] font-sans font-black uppercase leading-[0.9] tracking-tighter text-white [font-size:clamp(1.75rem,8vw,9.5rem)]"
           >
-            Tegtmeier &amp; Partner
+            Studio Mars
           </h1>
         </div>
       </div>

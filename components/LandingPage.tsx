@@ -31,10 +31,10 @@ const PEXELS = {
     "https://images.pexels.com/photos/12900435/pexels-photo-12900435.jpeg?auto=compress&cs=tinysrgb&w=1600",
 } as const;
 
-/** Hero: `public/kanzlei_250219.2000x770.jpg` (mit `basePath` auf GitHub Pages). */
-const KANZLEI_HERO_SRC = publicAssetPath("/kanzlei_250219.2000x770.jpg");
-/** Alias — gleiche URL wie `KANZLEI_HERO_SRC` (<picture>/<source>). */
-const MOBILE_HERO_SRC = KANZLEI_HERO_SRC;
+/** Hero: lokales Referenzmotiv (Studio Mars). */
+const HERO_IMAGE_SRC = publicAssetPath("/studio-mars1.jpg");
+/** Alias — gleiche URL wie `HERO_IMAGE_SRC` (<picture>/<source>). */
+const MOBILE_HERO_SRC = HERO_IMAGE_SRC;
 
 function subscribeReducedMotion(cb: () => void) {
   const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -59,7 +59,7 @@ type StickyStoryStep = {
   imageAlt: string;
 };
 
-type KanzleiCharacteristic = {
+type ProfilPillar = {
   id: string;
   title: string;
   description: string;
@@ -67,51 +67,53 @@ type KanzleiCharacteristic = {
   iconPaths: string[];
 };
 
+/** Inhalt aus mars-berlin.com: Home (Projekte), PROFIL, TEAM, KONTAKT. */
 const STICKY_STORY_STEPS: StickyStoryStep[] = [
   {
-    id: "testament",
+    id: "projekte",
     step: "01",
-    title: "Testament",
+    title: "Projekte",
     description:
-      "Wir formulieren Ihren letzten Willen klar, rechtssicher und in einer Form, die Ihre Familie langfristig entlastet.",
+      "Von Wohnbau und Sanierung über Schulen und öffentliche Gebäude bis zu Quartieren, Aufstockungen und Wettbewerben — wir bearbeiten ein breites Feld an Bauaufgaben für private und öffentliche Bauherren.",
     imageSrc: PEXELS.maksgelatin,
-    imageAlt: "Notarielle Unterlagen auf einem Schreibtisch während einer Beratung.",
+    imageAlt: "Gebäude und Architekturkontext — vielfältige Projekttypen.",
   },
   {
-    id: "vorsorge",
+    id: "profil",
     step: "02",
-    title: "Vorsorgevollmacht",
+    title: "Profil",
     description:
-      "Damit in Ausnahmesituationen alles geregelt bleibt, erstellen wir belastbare Vollmachten und medizinische Verfügungen.",
+      "Die Zukunftsfähigkeit eines Projektes steht für unser gesamtes Team im Vordergrund. Wir verfolgen eine ganzheitliche Nachhaltigkeit: flexible Grundrisse, vielseitig nutzbare Tragwerke, redundante Erschließungen und dauerhafte Materialien.",
     imageSrc: PEXELS.karola,
-    imageAlt: "Ein unterschriftsbereites Dokument bei einem Beratungsgespräch.",
+    imageAlt: "Planung und Materialien — Nachhaltigkeit im Detail.",
   },
   {
-    id: "immobilien",
+    id: "team",
     step: "03",
-    title: "Immobilienrecht",
+    title: "Team",
     description:
-      "Vom Kaufvertrag bis zur Grundbuchabwicklung begleiten wir Transaktionen strukturiert, transparent und terminsicher.",
+      "Unter der Geschäftsführung von Tarek Massalme, Philip Rieseberg und Jan-Oliver Kunze arbeiten Architekt:innen, Bauzeichner:innen und weitere Fachkräfte interdisziplinär zusammen.",
     imageSrc: PEXELS.cottonbro,
-    imageAlt: "Unterzeichnung eines Vertragsdokuments mit Stift und Akte.",
+    imageAlt: "Zusammenarbeit im Büro — Entwurf und Abstimmung.",
   },
   {
-    id: "nachfolge",
+    id: "kontakt",
     step: "04",
-    title: "Unternehmensnachfolge",
+    title: "Kontakt",
     description:
-      "Wir gestalten Übergaben strategisch, steuerlich abgestimmt und rechtlich präzise für Unternehmen und Familien.",
+      "Ab dem 1. Februar 2026: Alt-Moabit 103, 10559 Berlin. Tel +49 30 200 59 400 · studio@mars-berlin.com · Bewerbungen: apply@mars-berlin.com (PDF max. 15 MB).",
     imageSrc: PEXELS.vadutskevich,
-    imageAlt: "Beratungsszene mit Vertragsprüfung für eine Unternehmensnachfolge.",
+    imageAlt: "Ort und Erreichbarkeit — Gespräch über Ihr Projekt.",
   },
 ];
 
-const KANZLEI_CHARACTERISTICS: KanzleiCharacteristic[] = [
+const STUDIO_PROFIL_PILLARS: ProfilPillar[] = [
   {
-    id: "nahbar",
-    title: "Nahbar",
-    description: "Wir beraten auf Augenhöhe und machen komplexe juristische Themen klar verständlich.",
-    iconTitle: "Nahbare Beratung",
+    id: "neugier",
+    title: "Neugier und Vielfalt",
+    description:
+      "Wir arbeiten seit über fünfzehn Jahren an typologisch vielfältigen Projekten und freuen uns auf jede neue Aufgabe.",
+    iconTitle: "Vielfalt",
     iconPaths: [
       "M12 12m-7.5 0a7.5 7.5 0 1 0 15 0a7.5 7.5 0 1 0 -15 0",
       "M8.8 14.2c.9 1.5 2 2.3 3.2 2.3s2.3-.8 3.2-2.3",
@@ -120,10 +122,11 @@ const KANZLEI_CHARACTERISTICS: KanzleiCharacteristic[] = [
     ],
   },
   {
-    id: "präzise",
-    title: "Präzise",
-    description: "Verträge und Urkunden werden strukturiert vorbereitet, geprüft und rechtssicher abgeschlossen.",
-    iconTitle: "Präzise Arbeitsweise",
+    id: "zukunft",
+    title: "Zukunftsfähigkeit",
+    description:
+      "Die Zukunftsfähigkeit eines Projektes steht für unser gesamtes Team immer im Vordergrund.",
+    iconTitle: "Zukunft",
     iconPaths: [
       "M6.5 4.5h8l3 3v11h-11z",
       "M14.5 4.5v3h3",
@@ -131,30 +134,33 @@ const KANZLEI_CHARACTERISTICS: KanzleiCharacteristic[] = [
     ],
   },
   {
-    id: "diskret",
-    title: "Diskret",
-    description: "Vertraulichkeit ist für uns Grundlage jeder Zusammenarbeit - intern wie extern konsequent.",
-    iconTitle: "Diskretion",
+    id: "nachhaltigkeit",
+    title: "Ganzheitliche Nachhaltigkeit",
+    description:
+      "Über ökologisch-energetische Aspekte hinaus erreichen wir sie durch Raum, Struktur und Material.",
+    iconTitle: "Nachhaltigkeit",
     iconPaths: [
       "M12 4.5s-5.6 2.2-7.5 4.3c0 5.2 3.3 8.6 7.5 10.7c4.2-2.1 7.5-5.5 7.5-10.7C17.6 6.7 12 4.5 12 4.5z",
       "M9.4 12.2l1.7 1.7l3.5-3.5",
     ],
   },
   {
-    id: "vorausschauend",
-    title: "Vorausschauend",
-    description: "Wir denken Folgen früh mit und gestalten Lösungen so, dass sie langfristig tragfähig bleiben.",
-    iconTitle: "Vorausschauende Planung",
+    id: "flexibel",
+    title: "Flexible Grundrisse",
+    description:
+      "Vielseitig nutzbare Tragwerke und Strukturen für langfristig nutzbare Gebäude.",
+    iconTitle: "Flexibilität",
     iconPaths: [
       "M12 4v8l5.2 3",
       "M12 20m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0",
     ],
   },
   {
-    id: "vernetzt",
-    title: "Vernetzt",
-    description: "Bei Bedarf koordinieren wir alle Beteiligten effizient, damit Entscheidungen schnell umgesetzt werden.",
-    iconTitle: "Vernetzte Zusammenarbeit",
+    id: "robust",
+    title: "Struktur und Material",
+    description:
+      "Redundante Erschließungen und der Einsatz dauerhafter Materialien sichern Robustheit.",
+    iconTitle: "Material",
     iconPaths: [
       "M7 7h.01",
       "M17 7h.01",
@@ -165,10 +171,11 @@ const KANZLEI_CHARACTERISTICS: KanzleiCharacteristic[] = [
     ],
   },
   {
-    id: "zuverlässig",
-    title: "Zuverlässig",
-    description: "Termine, Fristen und Abläufe behalten wir stets im Blick - verbindlich und transparent.",
-    iconTitle: "Zuverlässige Begleitung",
+    id: "aesthetik",
+    title: "Ästhetische Nachhaltigkeit",
+    description:
+      "Architektur verstehen wir als Weg zu einer ästhetischen Nachhaltigkeit mit beständigem gesellschaftlichen Wert.",
+    iconTitle: "Ästhetik",
     iconPaths: [
       "M12 3.5l2.6 5.2l5.7.8l-4.1 4l1 5.7L12 16.4l-5.2 2.8l1-5.7l-4.1-4l5.7-.8z",
     ],
@@ -498,7 +505,7 @@ export function LandingPage() {
       const range = characteristicsRangeRef.current;
       if (!range) return;
 
-      const cardElements = KANZLEI_CHARACTERISTICS.map(
+      const cardElements = STUDIO_PROFIL_PILLARS.map(
         (_, index) => characteristicsCardRefs.current[index],
       );
       if (cardElements.some((item) => !item)) return;
@@ -573,7 +580,11 @@ export function LandingPage() {
     <>
       <IntroPreloader skip={reducedMotion} onIntroReady={handleIntroDone} />
 
-      <SiteHeader introDone={introDone} reducedMotion={reducedMotion} />
+      <SiteHeader
+        contactHref="mailto:studio@mars-berlin.com"
+        introDone={introDone}
+        reducedMotion={reducedMotion}
+      />
 
       <main
         id="main-content"
@@ -599,7 +610,7 @@ export function LandingPage() {
                     (hideChrome ? "opacity-0" : "")
                   }
                 >
-                  Rechtsanwälte &amp; Notare
+                  STUDIO MARS Berlin
                 </h1>
 
                 <figure
@@ -618,8 +629,8 @@ export function LandingPage() {
                     <source media="(max-width: 767px)" srcSet={MOBILE_HERO_SRC} />
                     <img
                       id="hero-image"
-                      src={KANZLEI_HERO_SRC}
-                      alt="Außenansicht und Eingangsbereich der Kanzlei Tegtmeier &amp; Partner."
+                      src={HERO_IMAGE_SRC}
+                      alt="Impression aus dem Leistungsspektrum von STUDIO MARS Berlin – Architektur in Berlin."
                       className="block h-full w-full object-cover object-center"
                       loading="eager"
                       decoding="async"
@@ -645,9 +656,9 @@ export function LandingPage() {
             id="hero-section-copy"
             className="split ml-auto px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(1rem,2.5vw,1.75rem)] pt-[clamp(1.5rem,4vw,3rem)] lg:pt-[clamp(3.5rem,7vw,6rem)] max-w-[30ch] text-left font-sans text-[clamp(1.5rem,3.4vw,3.3rem)] leading-[1.08] tracking-tight text-black"
           >
-            Unsere Kanzlei wurde 1991 gegründet. Wir betreuen seitdem
-            erfolgreich kleinere und mittlere Unternehmen, Familien und
-            Privatpersonen.
+            STUDIO MARS Berlin wurde im Jahr 2008 von den Architekten Tarek
+            Massalme, Philip Rieseberg und Jan-Oliver Kunze unter dem Namen MARS
+            Architekten in Berlin gegründet.
           </p>
         </section>
 
@@ -661,7 +672,7 @@ export function LandingPage() {
               id="sticky-services-heading"
               className="mb-[clamp(1rem,2.5vw,1.8rem)] text-left font-sans text-[clamp(0.72rem,1vw,0.9rem)] font-medium uppercase tracking-[0.2em] text-black"
             >
-              Unsere notariellen Schwerpunkte
+              Haltung &amp; Schwerpunkte
             </h2>
             <div id="sticky-services-list" className="mx-auto flex w-full max-w-[70rem] flex-col gap-[clamp(1.5rem,4vw,3rem)]">
               {STICKY_STORY_STEPS.map((step) => (
@@ -698,8 +709,8 @@ export function LandingPage() {
             <div className="mx-auto mt-[clamp(1.4rem,3vw,2.2rem)] flex w-full max-w-[70rem] justify-center">
               <PillArrowButton
                 id="sticky-services-cta-link-reduced"
-                href="/"
-                label="Beratung anfragen"
+                href="mailto:studio@mars-berlin.com"
+                label="Kontakt aufnehmen"
                 tone="dark"
               />
             </div>
@@ -714,7 +725,7 @@ export function LandingPage() {
               id="sticky-services-heading"
               className="px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(1rem,2.5vw,1.8rem)] text-left font-sans text-[clamp(0.72rem,1vw,0.9rem)] font-medium uppercase tracking-[0.2em] text-black"
             >
-              Unsere notariellen Schwerpunkte
+              Haltung &amp; Schwerpunkte
             </h2>
 
             <div
@@ -755,7 +766,7 @@ export function LandingPage() {
                   className="absolute inset-0 z-20 flex items-center justify-center px-[clamp(1rem,4vw,2.5rem)]"
                 >
                   <article
-                    id="sticky-services-card-testament"
+                    id="sticky-services-card-stack"
                     className="relative isolate h-fit overflow-hidden rounded-[clamp(1rem,2.2vw,2rem)] border border-black/5 bg-white p-[clamp(1rem,3vw,2rem)] shadow-[0_1.25rem_3.5rem_rgba(0,0,0,0.2)]"
                     style={{
                       width: "min(88vw, clamp(18rem, 38vw, 34rem))",
@@ -850,8 +861,8 @@ export function LandingPage() {
             <div className="mx-auto mt-[clamp(1.1rem,2.5vw,1.8rem)] flex w-full max-w-[70rem] justify-center px-[clamp(1rem,4vw,2.5rem)]">
               <PillArrowButton
                 id="sticky-services-cta-link"
-                href="/"
-                label="Beratung anfragen"
+                href="mailto:studio@mars-berlin.com"
+                label="Kontakt aufnehmen"
                 tone="dark"
               />
             </div>
@@ -860,43 +871,43 @@ export function LandingPage() {
 
         {reducedMotion ? (
           <section
-            id="kanzlei-charakteristik-section"
-            aria-labelledby="kanzlei-charakteristik-heading"
+            id="profil-section-section"
+            aria-labelledby="profil-section-heading"
             className="relative z-30 bg-white px-[clamp(1rem,4vw,2.5rem)] py-[clamp(3rem,8vw,6rem)]"
           >
             <header
-              id="kanzlei-charakteristik-header"
+              id="profil-section-header"
               className="mx-auto flex w-full max-w-[74rem] flex-col items-center text-center"
             >
               <h2
-                id="kanzlei-charakteristik-heading"
+                id="profil-section-heading"
                 className="font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
               >
-                Wir setzen auf Zwischenmenschlichkeit
+                Architektur mit Verantwortung
               </h2>
               <p
-                id="kanzlei-charakteristik-intro"
+                id="profil-section-intro"
                 className="mx-auto mt-[clamp(0.8rem,2vw,1.4rem)] max-w-[62ch] font-sans text-[clamp(0.95rem,1.5vw,1.12rem)] leading-[1.45] text-black/80"
               >
-                Unsere Arbeit verbindet juristische Klarheit mit verständlicher Kommunikation und verbindlicher Begleitung.
+                Neben der architektonischen Planung sind wir als Sachverständige für Bauschäden, Energieberater und im Bereich Design tätig — immer mit Blick auf eine ästhetische und gesellschaftlich tragfähige Architektur.
               </p>
             </header>
 
             <div
-              id="kanzlei-charakteristik-grid"
+              id="profil-section-grid"
               className="mx-auto mt-[clamp(1.6rem,4vw,2.8rem)] grid w-full max-w-[74rem] grid-cols-2 gap-[clamp(0.8rem,2vw,1.4rem)] md:grid-cols-3"
             >
-              {KANZLEI_CHARACTERISTICS.map((item) => {
+              {STUDIO_PROFIL_PILLARS.map((item) => {
                 return (
                   <article
                     key={item.id}
-                    id={`kanzlei-charakteristik-card-${item.id}`}
+                    id={`profil-section-card-${item.id}`}
                     className="group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:-translate-y-[0.16rem] md:hover:border-black/40 md:hover:bg-[#1f2738] md:hover:shadow-[0_0.95rem_2.1rem_rgba(0,0,0,0.16)]"
                   >
                     <div className="flex h-full flex-col">
                       <span className="inline-flex items-start justify-start">
                         <svg
-                          id={`kanzlei-charakteristik-icon-${item.id}`}
+                          id={`profil-section-icon-${item.id}`}
                           viewBox="0 0 24 24"
                           role="img"
                           aria-label={item.iconTitle}
@@ -913,7 +924,7 @@ export function LandingPage() {
                       </span>
 
                       <div
-                        id={`kanzlei-charakteristik-content-${item.id}`}
+                        id={`profil-section-content-${item.id}`}
                         className="mt-[clamp(0.6rem,1.2vw,0.9rem)] block max-h-none opacity-100 transition-[max-height,opacity,transform] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:max-h-0 md:translate-y-[0.2rem] md:opacity-0 md:group-hover:max-h-[40rem] md:group-hover:translate-y-0 md:group-hover:opacity-100"
                       >
                         <h3 className="font-sans text-[clamp(0.95rem,1.4vw,1.15rem)] font-semibold leading-[1.2] text-black transition-colors duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:group-hover:text-white">
@@ -931,49 +942,49 @@ export function LandingPage() {
           </section>
         ) : (
           <section
-            id="kanzlei-charakteristik-section"
-            aria-labelledby="kanzlei-charakteristik-heading"
+            id="profil-section-section"
+            aria-labelledby="profil-section-heading"
             className="relative z-40 mt-0 rounded-t-[clamp(1.2rem,2.8vw,2.4rem)] bg-white px-[clamp(1rem,4vw,2.5rem)] pt-[clamp(3rem,8vw,6rem)] pb-[clamp(3rem,8vw,6rem)]"
           >
             <div
               ref={characteristicsRangeRef}
-              id="kanzlei-charakteristik-scroll-range"
+              id="profil-section-scroll-range"
               className="relative h-fit"
             >
               <div
-                id="kanzlei-charakteristik-stage"
+                id="profil-section-stage"
                 className="flex flex-col"
               >
                 <header
-                  id="kanzlei-charakteristik-header"
+                  id="profil-section-header"
                   className="mx-auto flex w-full max-w-[74rem] flex-col items-center text-center"
                 >
                   <h2
-                    id="kanzlei-charakteristik-heading"
+                    id="profil-section-heading"
                     className="font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
                   >
-                    Wir setzen auf Zwischenmenschlichkeit
+                    Architektur mit Verantwortung
                   </h2>
                   <p
-                    id="kanzlei-charakteristik-intro"
+                    id="profil-section-intro"
                     className="mx-auto mt-[clamp(0.8rem,2vw,1.4rem)] max-w-[62ch] font-sans text-[clamp(0.95rem,1.5vw,1.12rem)] leading-[1.45] text-black/80"
                   >
-                    Unsere Arbeit verbindet juristische Klarheit mit verständlicher Kommunikation und verbindlicher Begleitung.
+                    Neben der architektonischen Planung sind wir als Sachverständige für Bauschäden, Energieberater und im Bereich Design tätig — immer mit Blick auf eine ästhetische und gesellschaftlich tragfähige Architektur.
                   </p>
                 </header>
 
                 <div
-                  id="kanzlei-charakteristik-canvas"
+                  id="profil-section-canvas"
                   className="relative mx-auto mt-[clamp(1.5rem,4vw,3rem)] grid h-auto w-full max-w-[74rem] auto-rows-[minmax(clamp(8.2rem,26vw,10.8rem),auto)] grid-cols-2 gap-[clamp(0.75rem,1.6vw,1.2rem)] overflow-visible md:h-[clamp(32rem,74vh,46rem)] md:auto-rows-auto md:grid-cols-12 md:grid-rows-10 md:gap-[clamp(0.45rem,1vw,0.85rem)]"
                 >
-                  {KANZLEI_CHARACTERISTICS.map((item, index) => {
+                  {STUDIO_PROFIL_PILLARS.map((item, index) => {
                     return (
                       <article
                         key={item.id}
                         ref={(node) => {
                           characteristicsCardRefs.current[index] = node;
                         }}
-                        id={`kanzlei-charakteristik-card-${item.id}`}
+                        id={`profil-section-card-${item.id}`}
                         className={
                           "group relative overflow-hidden rounded-[clamp(0.9rem,2vw,1.4rem)] border border-black/10 bg-white p-[clamp(0.9rem,2vw,1.25rem)] shadow-[0_0.8rem_2.1rem_rgba(0,0,0,0.14)] transition-[transform,box-shadow,background-color,border-color] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:hover:z-[70] md:hover:-translate-y-[0.2rem] md:hover:overflow-visible md:hover:border-black/40 md:hover:bg-[#1f2738] md:hover:shadow-[0_1rem_2.3rem_rgba(0,0,0,0.2)] " +
                           (CHARACTERISTICS_GRID_AREA_CLASSES[index] ?? "col-span-1 row-auto md:col-[1/5] md:row-[1/4]") +
@@ -985,7 +996,7 @@ export function LandingPage() {
                         <div className="relative flex h-full min-h-[clamp(6.8rem,12vw,9rem)] w-full flex-col">
                           <span className="inline-flex items-start justify-start">
                             <svg
-                              id={`kanzlei-charakteristik-icon-${item.id}`}
+                              id={`profil-section-icon-${item.id}`}
                               viewBox="0 0 24 24"
                               role="img"
                               aria-label={item.iconTitle}
@@ -1002,7 +1013,7 @@ export function LandingPage() {
                           </span>
 
                           <div
-                            id={`kanzlei-charakteristik-content-${item.id}`}
+                            id={`profil-section-content-${item.id}`}
                             className="mt-[clamp(0.6rem,1.2vw,0.9rem)] block max-h-none opacity-100 transition-[max-height,opacity,transform] duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:max-h-0 md:translate-y-[0.22rem] md:opacity-0 md:group-hover:max-h-[48rem] md:group-hover:translate-y-0 md:group-hover:opacity-100"
                           >
                             <h3 className="font-sans text-[clamp(0.95rem,1.4vw,1.15rem)] font-semibold leading-[1.2] text-black transition-colors duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] md:group-hover:text-white">

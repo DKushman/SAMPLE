@@ -22,35 +22,35 @@ type StackCard = {
 const STACK_CARDS: StackCard[] = [
   {
     id: "visual-dna",
-    title: "Erben und Vererben, die gesetzliche Erbfolge",
+    title: "Wohnbau und Sanierung",
     bgClass: "bg-[#55699A]",
     textClass: "text-white",
     imageSrc: imgErbe.src,
-    graphicAlt: "Notariatstermin mit Dokumenten",
+    graphicAlt: "Architektonische Detailaufnahme eines Wohngebäudes",
   },
   {
     id: "brand-alchemy",
-    title: "Existenzgründer: GmbH oder UG?",
+    title: "Öffentliche Gebäude und Schulen",
     bgClass: "bg-[#465881]",
     textClass: "text-white",
     imageSrc: imgGründung.src,
-    graphicAlt: "Person beim Unterzeichnen von Unterlagen",
+    graphicAlt: "Moderner Schul- oder Verwaltungsbau mit klaren Linien",
   },
   {
     id: "feel-first",
-    title: "Kaufverträge über Grundstücke",
+    title: "Quartiere und Stadt im Raum",
     bgClass: "bg-[#3D4B6E]",
     textClass: "text-white",
     imageSrc: imgGrundstück.src,
-    graphicAlt: "Beratungssituation am Tisch",
+    graphicAlt: "Städtisches Quartier mit Gebäuden und Freiraum",
   },
   {
     id: "human-clicks",
-    title: "Bestellung einer Grundschuld",
+    title: "Wettbewerbe und Gutachten",
     bgClass: "bg-[#273149]",
     textClass: "text-white",
     imageSrc: imgGründung.src,
-    graphicAlt: "Vertragsdokumente in Nahaufnahme",
+    graphicAlt: "Modell- oder Planungsdiskussion am Arbeitstisch",
   },
 ];
 
@@ -237,7 +237,7 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
     return (
       <section
         ref={rootRef}
-        id="stack-showcase-section"
+        id="projekte-section"
         aria-labelledby="stack-showcase-heading"
         className="px-[clamp(1rem,4vw,2.5rem)] py-[clamp(3rem,8vw,6rem)]"
       >
@@ -245,10 +245,10 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
           id="stack-showcase-heading"
           className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] px-[clamp(1rem,4vw,2.5rem)] text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
         >
-          Unsere Mandanteninformationen für Sie
+          Ein Ausschnitt unserer Arbeit
         </h2>
         <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] px-[clamp(1rem,4vw,2.5rem)] text-center text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
-          Ausgewählte Informationen zu häufigen notariellen und rechtlichen Themen.
+          Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
         <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
           {STACK_CARDS.map((card) => (
@@ -264,24 +264,24 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
           ))}
         </div>
         <div className="mx-auto mt-[clamp(1.2rem,3vw,2rem)] flex w-full max-w-[42rem] justify-center px-[clamp(1rem,4vw,2.5rem)]">
-          <PillArrowButton href="/" label="Alle Mandanteninformationen ansehen" />
+          <PillArrowButton href="#site-contact-cta-section" label="Projekt anfragen" tone="dark" />
         </div>
       </section>
     );
   }
 
   return (
-    <section ref={rootRef} id="stack-showcase-section" className="relative z-20">
+    <section ref={rootRef} id="projekte-section" className="relative z-20">
       {/* Mobil: natives Scrollen, volle Karten — kein 520vh/GSAP (keine „Striche“, weniger CPU). */}
       <div className="px-[clamp(1rem,4vw,2.5rem)] pb-[clamp(3rem,8vw,6rem)] pt-[clamp(3rem,8vw,6rem)] md:hidden">
         <h2
           id="stack-showcase-heading"
           className="mx-auto mb-[clamp(0.7rem,2vw,1rem)] px-[clamp(1rem,4vw,2.5rem)] text-center font-sans text-[clamp(1.7rem,4.2vw,3.35rem)] font-semibold leading-[1.04] tracking-tight text-black"
         >
-          Unsere Mandanteninformationen für Sie
+          Ein Ausschnitt unserer Arbeit
         </h2>
         <p className="mx-auto mb-[clamp(1.25rem,3vw,2rem)] max-w-[62ch] px-[clamp(1rem,4vw,2.5rem)] text-center text-[clamp(0.9rem,1.6vw,1.05rem)] leading-[1.45] text-black/72">
-          Ausgewählte Informationen zu häufigen notariellen und rechtlichen Themen.
+          Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
         <div className="mx-auto flex w-full max-w-[42rem] flex-col gap-[clamp(1rem,2.5vw,1.5rem)]">
           {STACK_CARDS.map((card) => (
@@ -297,15 +297,15 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
           ))}
         </div>
         <div className="mx-auto mt-[clamp(1.2rem,3vw,2rem)] flex w-full max-w-[42rem] justify-center px-[clamp(1rem,4vw,2.5rem)]">
-          <PillArrowButton href="/" label="Alle Mandanteninformationen ansehen" />
+          <PillArrowButton href="#site-contact-cta-section" label="Projekt anfragen" tone="dark" />
         </div>
       </div>
 
       {/* Desktop: Scroll-Story + GSAP */}
       <div className="hidden md:block">
-        <h2 className="sr-only">Unsere Mandanteninformationen für Sie</h2>
+        <h2 className="sr-only">Ein Ausschnitt unserer Arbeit</h2>
         <p className="sr-only">
-          Ausgewählte Informationen zu häufigen notariellen und rechtlichen Themen.
+          Typologisch vielfältige Projekte — von Wohnen und Sanierung bis zu öffentlichen Aufgaben und Wettbewerben.
         </p>
         <div
           ref={scrollRangeRef}
@@ -344,7 +344,7 @@ export function StackedCardsShowcase({ reducedMotion }: StackedCardsShowcaseProp
               ))}
             </div>
             <div className="absolute bottom-[clamp(1rem,3vh,2rem)] left-0 right-0 z-30 flex justify-center px-[clamp(1rem,4vw,2.5rem)]">
-              <PillArrowButton href="/" label="Alle Mandanteninformationen ansehen" />
+              <PillArrowButton href="#site-contact-cta-section" label="Projekt anfragen" tone="dark" />
             </div>
           </div>
         </div>
